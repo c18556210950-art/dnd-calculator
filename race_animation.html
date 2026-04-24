@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恐龙竞速 - 规则演示动画</title>
+    <style>
+        :root {
+            --bg-color: #1a1e1a;
+            --panel-bg: #2a332a;
+            --text-main: #d3d7cf;
+            --accent-green: #5ca108;
+            --accent-red: #d0021b;
+            --track-bg: #4a3b2c;
+            --line-color: #e0d5a3;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 { color: #f5a623; margin-bottom: 5px; }
+        .subtitle { color: #888; margin-bottom: 20px; font-style: italic; }
+
+        .game-container {
+            width: 100%;
+            max-width: 900px;
+            background: var(--panel-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            border: 2px solid #3b4d3d;
+        }
+
+        /* 赛道样式 */
+        .track-container {
+            margin-bottom: 20px;
+            border: 2px solid #222;
+            border-radius: 8px;
+            background-color: var(--track-bg);
+            background-image: repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(255,255,255,0.1) 50px);
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .finish-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 5%; /* Leave some space after finish line */
+            width: 10px;
+            background: repeating-linear-gradient(45deg, #fff, #fff 10px, #000 10px, #000 20px);
+            z-index: 1;
+        }
+
+        .lane {
+            height: 60px;
+            border-bottom: 2px dashed rgba(0,0,0,0.3);
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .lane:last-child { border-bottom: none; }
+
+        .dino-entity {
+            position: absolute;
+            left: 2%; /* Start line */
+            width: 50px;
+            height: 50px;
+            transition: left 1s ease-in-out;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dino-icon { font-size: 30px; filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5)); }
+        .dino-name { font-size: 12px; font-weight: bold; color: white; white-space: nowrap; text-shadow: 1px 1px 2px black; position: absolute; bottom: -15px;}
+        .status-badge { position: absolute; top: -10px; right: -10px; font-size: 16px; }
+
+        /* 控制台与日志 */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .controls {
+            background: #1e251e;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #3b4d3d;
+        }
+
+        .btn {
+            background: #4a5d4a;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        .btn:hover { background: var(--accent-green); }
+        .btn:disabled { background: #555; cursor: not-allowed; }
+        .btn-whip { background: #8a3a3a; }
+        .btn-whip:hover { background: var(--accent-red); }
+
+        .log-panel {
+            background: #111;
+            padding: 15px;
+            border-radius: 8px;
+            height: 250px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 14px;
+            border: 1px solid #333;
+        }
+
+        .log-entry { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px dashed #333; }
+        .log-round { color: #f5a623; font-weight: bold; font-size: 16px; margin-top: 10px;}
+        .log-success { color: var(--accent-green); }
+        .log-fail { color: #aaa; }
+        .log-frenzy { color: var(--accent-red); font-weight: bold; }
+        
+        .distance-labels {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5%;
+            color: #888;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🐾 恐龙竞速机制演示</h1>
+
+    <div class="game-container">
+        <!-- 赛道区域 -->
+        <div class="track-container">
+            <div class="finish-line"></div>
+            
+            <div class="lane" id="lane-0">
+                <div class="dino-entity" id="dino-0">
+                    <div class="status-badge" id="status-0"></div>
+                    <div class="dino-icon">🦖</div>
+                    <div class="dino-name">碎骨 (异龙)</div>
+                </div>
+            </div>
+            <div class="lane" id="lane-1">
+                <div class="dino-entity" id="dino-1">
+                    <div class="status-badge" id="status-1"></div>
+                    <div class="dino-icon">🦕</div>
+                    <div class="dino-name">香蕉糖糖 (鸭嘴龙)</div>
+                </div>
+            </div>
+            <div class="lane" id="lane-2">
+                <div class="dino-entity" id="dino-2">
+                    <div class="status-badge" id="status-2"></div>
+                    <div class="dino-icon">🦏</div>
+                    <div class="dino-name">大喇叭 (三角龙)</div>
+                </div>
+            </div>
+        </div>
+        <div class="distance-labels">
+            <span>0尺 (起点)</span>
+            <span>150尺</span>
+            <span>300尺 (终点)</span>
+        </div>
+
+        <!-- 控制台 -->
+        <div class="dashboard">
+            <div class="controls">
+                <h3>扮演玩家：大喇叭的骑手 (驯兽+3)</h3>
+                <p id="game-status">第 1 轮等待指令...</p>
+                <p style="font-size: 12px; color: #aaa;">常规：过DC14，成功进50尺。<br>鞭策：优势过DC14，成功进75尺。失败差5点(<=9)发狂退赛。回合末体质豁免失败减速一半。</p>
+                <hr style="border-color: #333;">
+                <button class="btn" id="btn-normal" onclick="playRound('normal')">稳健骑乘 (常规检定)</button>
+                <button class="btn btn-whip" id="btn-whip" onclick="playRound('whip')">大力鞭策 (优势检定)</button>
+                <button class="btn" id="btn-reset" onclick="initGame()" style="display: none; background: #333;">重新开始</button>
+            </div>
+
+            <div class="log-panel" id="log-panel">
+                <!-- 日志输出 -->
+            </div>
+        </div>
+    </div>
+
+<script>
+    // 恐龙数据配置
+    const DINO_CONFIG =[
+        { id: 0, name: "碎骨 (异龙)", icon: "🦖", baseSpeed: 50, fastSpeed: 80, dc: 16, ahMod: +2, conMod: +2 },
+        { id: 1, name: "香蕉糖糖 (鸭嘴龙)", icon: "🦕", baseSpeed: 40, fastSpeed: 50, dc: 10, ahMod: +4, conMod: +1 },
+        { id: 2, name: "大喇叭 (三角龙)[玩家]", icon: "🦏", baseSpeed: 50, fastSpeed: 75, dc: 14, ahMod: +3, conMod: +2, isPlayer: true }
+    ];
+
+    let state =[];
+    let roundCount = 1;
+    let gameOver = false;
+
+    // 掷骰子工具函数
+    function rollD20(advantage = false) {
+        let r1 = Math.floor(Math.random() * 20) + 1;
+        if (!advantage) return r1;
+        let r2 = Math.floor(Math.random() * 20) + 1;
+        return Math.max(r1, r2);
+    }
+
+    // 初始化游戏
+    function initGame() {
+        state = DINO_CONFIG.map(d => ({
+            ...d,
+            dist: 0,
+            status: 'normal', // normal, halved, frenzied
+            speedMult: 1
+        }));
+        roundCount = 1;
+        gameOver = false;
+        
+        document.getElementById('log-panel').innerHTML = "系统：欢迎来到南扎路港！比赛即将开始。<br>-------------------------<br>";
+        document.getElementById('btn-normal').style.display = 'inline-block';
+        document.getElementById('btn-whip').style.display = 'inline-block';
+        document.getElementById('btn-reset').style.display = 'none';
+        document.getElementById('game-status').innerText = `第 1 轮等待指令...`;
+
+        updateUI();
+    }
+
+    // 记录日志
+    function log(msg, type = "normal") {
+        const panel = document.getElementById('log-panel');
+        let cssClass = '';
+        if(type === 'success') cssClass = 'log-success';
+        if(type === 'fail') cssClass = 'log-fail';
+        if(type === 'frenzy') cssClass = 'log-frenzy';
+        if(type === 'round') cssClass = 'log-round';
+        
+        panel.innerHTML += `<div class="log-entry ${cssClass}">${msg}</div>`;
+        panel.scrollTop = panel.scrollHeight;
+    }
+
+    // 更新画面
+    function updateUI() {
+        state.forEach(d => {
+            const el = document.getElementById(`dino-${d.id}`);
+            const badge = document.getElementById(`status-${d.id}`);
+            
+            // 计算位移百分比 (起点 2%，终点 95% = 跨度 93%)
+            let progress = (d.dist / 300) * 93 + 2;
+            if (progress > 95) progress = 95;
+            el.style.left = progress + '%';
+
+            // 更新状态徽章
+            if (d.status === 'frenzied') badge.innerText = "💢";
+            else if (d.status === 'halved') badge.innerText = "🐢";
+            else badge.innerText = "";
+        });
+    }
+
+    // NPC AI逻辑
+    function getNPCAction(dino) {
+        // 如果落后且不是最后冲刺，有40%概率鞭策，否则常规
+        if (Math.random() < 0.4) return 'whip';
+        return 'normal';
+    }
+
+    // 执行一回合
+    function playRound(playerAction) {
+        if (gameOver) return;
+
+        log(`=== 第 ${roundCount} 轮 开始 ===`, 'round');
+
+        // 决定每个人动作
+        let actions =[];
+        state.forEach(d => {
+            if (d.status === 'frenzied') return; // 发狂退赛不行动
+            let act = d.isPlayer ? playerAction : getNPCAction(d);
+            actions.push({ dino: d, act: act });
+        });
+
+        // 阶段 1: 移动检定
+        let endRoundConSaves =[];
+
+        actions.forEach(turn => {
+            let d = turn.dino;
+            let act = turn.act;
+            
+            let roll = rollD20(act === 'whip');
+            let total = roll + d.ahMod;
+            let targetDC = d.dc;
+            
+            let modeStr = act === 'whip' ? "大力鞭策(优势)" : "稳健骑乘";
+            let diff = targetDC - total;
+
+            if (act === 'whip' && diff >= 5) {
+                // 差值>=5且是鞭策，发狂！
+                d.status = 'frenzied';
+                log(`${d.name} 选择了 ${modeStr}。检定: ${roll}+${d.ahMod}=${total} vs DC${targetDC}。差值为 ${diff}！<br>[警告] 恐龙不堪受辱，发狂并退出比赛！`, 'frenzy');
+            } else if (total >= targetDC) {
+                // 成功
+                let moveDist = Math.floor((act === 'whip' ? d.fastSpeed : d.baseSpeed) * d.speedMult);
+                d.dist += moveDist;
+                log(`${d.name} 选择了 ${modeStr}。检定: ${roll}+${d.ahMod}=${total} vs DC${targetDC}。成功！前进了 ${moveDist} 尺。当前: ${d.dist}尺。`, 'success');
+                if (act === 'whip') endRoundConSaves.push(d); // 记录鞭策者需要在回合末过体质
+            } else {
+                // 普通失败
+                log(`${d.name} 选择了 ${modeStr}。检定: ${roll}+${d.ahMod}=${total} vs DC${targetDC}。失败！本轮未前进。`, 'fail');
+                if (act === 'whip') endRoundConSaves.push(d); // 虽然失败，如果没发狂，规则提到仍需进行体质检定
+            }
+        });
+
+        // 阶段 2: 回合末体质检定 (因鞭策)
+        endRoundConSaves.forEach(d => {
+            if (d.status === 'frenzied') return; // 如果已经发狂退赛就不用过了
+            let conRoll = rollD20(false);
+            let conTotal = conRoll + d.conMod;
+            if (conTotal < 10) {
+                d.status = 'halved';
+                d.speedMult = 0.5;
+                log(`[体质豁免] ${d.name} 因被鞭策进行体质检定：${conRoll}+${d.conMod}=${conTotal} vs DC 10。失败！后续速度永久减半！`, 'fail');
+            } else {
+                log(`[体质豁免] ${d.name} 顶住了鞭策的疲惫 (检定 ${conTotal} >= 10)，速度保持不变。`, 'success');
+            }
+        });
+
+        updateUI();
+
+        // 阶段 3: 结算胜负
+        let finishers = state.filter(d => d.dist >= 300);
+        if (finishers.length > 0) {
+            // 谁里程最长谁赢
+            finishers.sort((a, b) => b.dist - a.dist);
+            let winner = finishers[0];
+            
+            // 检查平局
+            let tied = finishers.filter(d => d.dist === winner.dist);
+            
+            log(`=== 比赛结束 ===`, 'round');
+            if (tied.length > 1) {
+                log(`🏆 精彩绝伦！${tied.map(d=>d.name).join(" 和 ")} 同时冲过终点，打成平手！`, 'success');
+            } else {
+                log(`🏆 冠军诞生！${winner.name} 以 ${winner.dist} 尺的成绩夺冠！下注池旁开始了狂欢（或斗殴）！`, 'success');
+            }
+            
+            endGame();
+        } else {
+            let activeRacers = state.filter(d => d.status !== 'frenzied');
+            if (activeRacers.length === 0) {
+                log(`💀 所有恐龙均已发狂退赛！本次竞速无人生还/完赛！`, 'frenzy');
+                endGame();
+            } else {
+                roundCount++;
+                document.getElementById('game-status').innerText = `第 ${roundCount} 轮等待指令...`;
+                
+                // 如果玩家已经发狂，自动跳过玩家回合
+                let p = state.find(d => d.isPlayer);
+                if (p.status === 'frenzied') {
+                    document.getElementById('btn-normal').disabled = true;
+                    document.getElementById('btn-whip').disabled = true;
+                    document.getElementById('game-status').innerText = `您的坐骑已发狂退赛。正在自动结算剩余比赛...`;
+                    setTimeout(() => playRound('normal'), 1500); // 自动播放剩余回合
+                }
+            }
+        }
+    }
+
+    function endGame() {
+        gameOver = true;
+        document.getElementById('btn-normal').style.display = 'none';
+        document.getElementById('btn-whip').style.display = 'none';
+        document.getElementById('btn-reset').style.display = 'inline-block';
+        document.getElementById('game-status').innerText = `比赛结束！`;
+    }
+
+    // 初始加载
+    initGame();
+</script>
+
+</body>
+</html>
