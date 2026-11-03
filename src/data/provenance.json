@@ -1,0 +1,72 @@
+{
+  "retrieved": "2026-11-03",
+  "site": "https://5e.kiwee.top/",
+  "selection": "Separate catalogs: 2014 class chassis with published legacy supplements; 2024 class chassis with XPHB/FRHoF/EFA/RHW/AU. Wizard includes weapon specialist Bladesinger only. No UA or cross-edition copied subclasses.",
+  "factsOnly": "Subclass/feature names and unlock levels; weapon numeric stats. No full feature prose redistributed.",
+  "inputs": [
+    {
+      "url": "https://5e.kiwee.top/data/class/class-artificer.json",
+      "sha256NormalizedJson": "215ed311d7c6c6ebcb792cdd03768170b62a444dc05dabd5e34a78d9b02efb94"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/class/class-barbarian.json",
+      "sha256NormalizedJson": "966571d57172c23c9dd5290e08758a90ca95f7eeb4218603e48a959df5d866de"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/class/class-bard.json",
+      "sha256NormalizedJson": "4258d3b940096679455908b9c3637ce55db6a30fdc732e938aa826773d35a8a4"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/books.json",
+      "sha256NormalizedJson": "49caa353ac5e20a8b30c953d286764ca7be9817e6dc980e82403311f96f94e92"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/class/class-cleric.json",
+      "sha256NormalizedJson": "595ac8cb1c65b72e7cf1935a9c77dbb40ceef8caa11535a3bc837b9ff9e7d729"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/class/class-druid.json",
+      "sha256NormalizedJson": "bcc25bd8432fd471e2aa5c70ca98848487b1cbf0e05ea88b21572d5221090362"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/feats.json",
+      "sha256NormalizedJson": "c73a306982cc9a72136b5f1d4e7da058e3210a22e941be4c0674c055b7c4d292"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/class/class-fighter.json",
+      "sha256NormalizedJson": "dbb229a717c6d8b1151bebe5d266b5e1a25c5546e711122c6871909843309570"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/items-base.json",
+      "sha256NormalizedJson": "061785a777821c4e44f720a65437d396c458377d3bb87cb2ee4c3b8fda8cbef1"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/class/class-monk.json",
+      "sha256NormalizedJson": "59c330962c2e074f19362b1ea586ea81687882a5729f2e033722b0b916cd6c73"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/optionalfeatures.json",
+      "sha256NormalizedJson": "77834be163fe1bd857e00047a7797c6cd0411bac6baa6f5d1ffa293b7e41fd68"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/class/class-paladin.json",
+      "sha256NormalizedJson": "62ae47eefb726e6c2c969040863d083624711eed461be0245ff43bafe58da030"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/class/class-ranger.json",
+      "sha256NormalizedJson": "44908cf1ea0135a2f15a6e9ae7b4b2fb50bea8ede99542fffa0a9da775650f99"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/class/class-rogue.json",
+      "sha256NormalizedJson": "e33a021d40f0996e78a83ce34de8f6c5a6ec2a087e686a0a66fb21bfeb73c725"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/class/class-warlock.json",
+      "sha256NormalizedJson": "c4913f1d3242c556fb30fe1eea336de363e42267cf7547d9df6dda49e30626c2"
+    },
+    {
+      "url": "https://5e.kiwee.top/data/class/class-wizard.json",
+      "sha256NormalizedJson": "d320b2ae14c564c5af8a034f9d5010269eb44c1c638628ffe0f90b8db3afe363"
+    }
+  ]
+}

@@ -5,4 +5,5 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   base: '/dnd-calculator/',
+  build: { emptyOutDir: true },
 })
