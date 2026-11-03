@@ -1,7 +1,7 @@
 <template>
   <div class="calculator-container">
     <header class="header">
-      <h1>D&D 5E 伤害计算器 🐉</h1>
+      <a class="home-link" href="/">← Wilder 主页</a><h1>D&D 5E 伤害计算器</h1><p>配置攻击与法术，实时比较伤害期望</p>
       
       <!-- 标签页切换 --> 
       <div class="tabs">
@@ -16,6 +16,13 @@
       <button @click="resetConfig" class="reset-btn">🔄 重置默认</button>
     </header>
 
+    <p v-if="storageNotice || inputNotice" class="notice" role="status">{{ storageNotice || inputNotice }}</p>
+    <details class="rules-note"><summary>计算口径与规则说明</summary>
+      <p>命中率包含重击。普通豁免仅比较总值与 DC，天然 1 / 20 不自动失败或成功。命中加值已包含熟练，请勿重复相加；PB 输入仅用于咒剑诅咒。</p>
+      <p>此工具保留可组合的跨版本特性：-5/+10 与凶蛮重击按旧版；巨武战斗按界面所示将武器骰的 1、2 视为 3；猎人印记按力场伤害。按桌规自行选择，不自动检查动作、专注或资源冲突。</p>
+      <p>每回合一次的附伤在首次命中使用，不等待重击。至圣斩按每次命中消耗资源估算；诗人命中激励按每次攻击可用估算。伤害使用均值与抗性倍率，不逐次向下取整，不模拟传奇抗性、闪避或死亡豁免。</p>
+      <a href="https://www.dndbeyond.com/sources/dnd/br-2024/playing-the-game" target="_blank" rel="noopener noreferrer">查阅 D&D 基础规则 ↗</a>
+    </details>
     <!-- ================= 标签页 1：攻击期望 ================= -->
     <main class="main-content" v-if="activeTab === 'attack'">
       <!-- 左侧：配置区 -->
@@ -25,16 +32,16 @@
           <div class="card-title">⚔️ 基础攻击面板</div>
           <div class="grid-3">
             <div class="input-group">
-              <label>每轮攻击次数</label>
-              <input type="number" v-model.number="config.attacksPerRound" min="1" max="10" />
+              <label for="field-1">每轮攻击次数</label>
+              <input id="field-1" type="number" v-model.number="config.attacksPerRound" min="1" max="10" />
             </div>
             <div class="input-group">
-              <label>熟练加值 (PB)</label>
-              <input type="number" v-model.number="config.pb" min="2" max="6" />
+              <label for="field-2">熟练加值 (PB)</label>
+              <input id="field-2" type="number" v-model.number="config.pb" min="2" max="6" />
             </div>
             <div class="input-group">
-              <label>重击范围 (Crit)</label>
-              <select v-model.number="config.critThreshold">
+              <label for="field-3">重击范围 (Crit)</label>
+              <select id="field-3" v-model.number="config.critThreshold">
                 <option :value="20">20</option>
                 <option :value="19">19 - 20</option>
                 <option :value="18">18 - 20</option>
@@ -42,32 +49,32 @@
             </div>
           </div>
           <div class="input-row mt-2">
-            <div class="input-group"><label>武器骰数</label><input type="number" v-model.number="config.diceCount"/></div>
+            <div class="input-group"><label for="field-4">武器骰数</label><input id="field-4" type="number" v-model.number="config.diceCount"/></div>
             <span class="cross">d</span>
             <div class="input-group">
-              <label>面数</label>
-              <select v-model.number="config.diceType">
+              <label for="field-5">面数</label>
+              <select id="field-5" v-model.number="config.diceType">
                 <option :value="4">4</option><option :value="6">6</option><option :value="8">8</option>
                 <option :value="10">10</option><option :value="12">12</option>
               </select>
             </div>
             <span class="cross">+</span>
-            <div class="input-group"><label>属性加值(Hit)</label><input type="number" v-model.number="config.baseAttackBonus"/></div>
+            <div class="input-group"><label for="field-6">总命中加值（含熟练）</label><input id="field-6" type="number" v-model.number="config.baseAttackBonus"/></div>
             <span class="cross">+</span>
-            <div class="input-group"><label>属性加值(Dmg)</label><input type="number" v-model.number="config.baseDamageMod"/></div>
+            <div class="input-group"><label for="field-7">伤害属性加值</label><input id="field-7" type="number" v-model.number="config.baseDamageMod"/></div>
           </div>
           <div class="grid-2 mt-2">
             <div class="input-group">
-              <label>基础伤害类型</label>
-              <select v-model="config.baseDamageType">
+              <label for="field-8">基础伤害类型</label>
+              <select id="field-8" v-model="config.baseDamageType">
                 <option v-for="t in damageTypes" :key="t.value" :value="t.value">{{ t.label }}</option>
               </select>
             </div>
             <div class="input-group">
               <label>自选调整 (如 +1 附魔武器)</label>
               <div style="display:flex; gap:5px;">
-                <input type="number" placeholder="Hit+" v-model.number="config.customAttackMod" title="自定义命中加成" />
-                <input type="number" placeholder="Dmg+" v-model.number="config.customDamageMod" title="自定义伤害加成" />
+                <input aria-label="自选命中调整" type="number" placeholder="Hit+" v-model.number="config.customAttackMod" title="自定义命中加成" />
+                <input aria-label="自选伤害调整" type="number" placeholder="Dmg+" v-model.number="config.customDamageMod" title="自定义伤害加成" />
               </div>
             </div>
           </div>
@@ -193,21 +200,21 @@
         <div class="card">
           <div class="card-title flex-between">
             <span>🎲 自定义附加骰</span>
-            <button class="add-btn" @click="addCustomDice">➕ 添加</button>
+            <button :disabled="config.customDice.length >= 30" class="add-btn" @click="addCustomDice">➕ 添加</button>
           </div>
           <div v-for="(dice, idx) in config.customDice" :key="idx" class="custom-dice-row">
-            <input type="number" v-model.number="dice.count" style="width:35px"> d
-            <select v-model.number="dice.type" style="width:45px">
+            <input type="number" aria-label="附加骰数量" v-model.number="dice.count" style="width:35px"> d
+            <select aria-label="附加骰面数" v-model.number="dice.type" style="width:45px">
               <option :value="4">4</option><option :value="6">6</option><option :value="8">8</option>
               <option :value="10">10</option><option :value="12">12</option>
             </select>
-            <select v-model="dice.dmgType" style="width:65px">
+            <select aria-label="附加骰伤害类型" v-model="dice.dmgType" style="width:65px">
               <option v-for="t in damageTypes" :key="t.value" :value="t.value">{{ t.label.split(' ')[0] }}</option>
             </select>
-            <select v-model="dice.frequency" style="width:75px">
+            <select aria-label="附加骰触发频率" v-model="dice.frequency" style="width:75px">
               <option value="perHit">每击</option><option value="once">限1次</option>
             </select>
-            <button class="del-btn" @click="removeCustomDice(idx)">✖</button>
+            <button class="del-btn" @click="removeCustomDice(idx)" :aria-label="`删除第 ${idx+1} 组附加骰`">✖</button>
           </div>
         </div>
       </section>
@@ -234,8 +241,8 @@
         <div class="card result-card">
           <h2>📊 攻击结算看板</h2>
           <div class="stats-grid mt-2">
-            <div class="stat-box"><div class="stat-label">综合命中加值</div><div class="stat-value">+{{ effectiveAttackBonus.toFixed(1) }}</div></div>
-            <div class="stat-box"><div class="stat-label">实际命中率</div><div class="stat-value">{{ (currentDPR.normalHitRate * 100).toFixed(1) }}%</div></div>
+            <div class="stat-box"><div class="stat-label">命中加值（含骰均值）</div><div class="stat-value">+{{ effectiveAttackBonus.toFixed(1) }}</div></div>
+            <div class="stat-box"><div class="stat-label">实际命中率</div><div class="stat-value">{{ (currentDPR.hitRate * 100).toFixed(1) }}%</div></div>
             <div class="stat-box"><div class="stat-label">暴击率</div><div class="stat-value crit-text">{{ (currentDPR.critRate * 100).toFixed(1) }}%</div></div>
           </div>
           <div class="formula-box mt-3">
@@ -273,12 +280,12 @@
           <div class="card-title">☄️ 法术豁免面板</div>
           <div class="grid-2">
             <div class="input-group">
-              <label>你的法术豁免 DC</label>
-              <input type="number" v-model.number="saveConfig.spellDC" min="1" max="40" />
+              <label for="field-9">你的法术豁免 DC</label>
+              <input id="field-9" type="number" v-model.number="saveConfig.spellDC" min="1" max="40" />
             </div>
             <div class="input-group">
-              <label>目标豁免加值 (Save Mod)</label>
-              <input type="number" v-model.number="saveConfig.targetSaveMod" />
+              <label for="field-10">目标豁免加值 (Save Mod)</label>
+              <input id="field-10" type="number" v-model.number="saveConfig.targetSaveMod" />
             </div>
           </div>
 
@@ -292,29 +299,29 @@
           </div>
 
           <div class="input-row mt-3">
-            <div class="input-group"><label>伤害骰数量</label><input type="number" v-model.number="saveConfig.diceCount"/></div>
+            <div class="input-group"><label for="field-11">伤害骰数量</label><input id="field-11" type="number" v-model.number="saveConfig.diceCount"/></div>
             <span class="cross">d</span>
             <div class="input-group">
-              <label>面数</label>
-              <select v-model.number="saveConfig.diceType">
+              <label for="field-12">面数</label>
+              <select id="field-12" v-model.number="saveConfig.diceType">
                 <option :value="4">4</option><option :value="6">6</option><option :value="8">8</option>
                 <option :value="10">10</option><option :value="12">12</option>
               </select>
             </div>
             <span class="cross">+</span>
-            <div class="input-group"><label>固定加值</label><input type="number" v-model.number="saveConfig.flatMod"/></div>
+            <div class="input-group"><label for="field-13">固定加值</label><input id="field-13" type="number" v-model.number="saveConfig.flatMod"/></div>
           </div>
 
           <div class="grid-2 mt-3">
             <div class="input-group">
-              <label>伤害类型</label>
-              <select v-model="saveConfig.damageType">
+              <label for="field-14">伤害类型</label>
+              <select id="field-14" v-model="saveConfig.damageType">
                 <option v-for="t in damageTypes" :key="t.value" :value="t.value">{{ t.label }}</option>
               </select>
             </div>
             <div class="input-group">
-              <label>豁免成功效果</label>
-              <select v-model="saveConfig.successEffect">
+              <label for="field-15">豁免成功效果</label>
+              <select id="field-15" v-model="saveConfig.successEffect">
                 <option value="half">受到一半伤害 (如火球术)</option>
                 <option value="zero">不受任何伤害 (如圣火术)</option>
               </select>
@@ -372,222 +379,44 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, watch, onMounted } from 'vue'
-
+import { ref, reactive, computed, watch } from 'vue'
+import { damageTypes, dtDict, defaultConfig, defaultSaveConfig, normalizeConfig, buildDamageSources, attackBonus, calculateAttack, calculateSave } from './engine.js'
 const activeTab = ref('attack')
-
-const damageTypes =[
-  { value: 'slashing', label: '挥砍 (Slashing)' }, { value: 'piercing', label: '穿刺 (Piercing)' },
-  { value: 'bludgeoning', label: '钝击 (Bludgeoning)' }, { value: 'radiant', label: '光耀 (Radiant)' },
-  { value: 'necrotic', label: '暗蚀 (Necrotic)' }, { value: 'cold', label: '冷冻 (Cold)' },
-  { value: 'fire', label: '火焰 (Fire)' }, { value: 'force', label: '力场 (Force)' },
-  { value: 'thunder', label: '雷鸣 (Thunder)' }, { value: 'acid', label: '强酸 (Acid)' }
-]
-
-const dtDict = Object.fromEntries(damageTypes.map(t =>[t.value, t.label.split(' ')[0]]))
-
-// === 配置 1：攻击期望 ===
-const defaultConfig = {
-  attacksPerRound: 2, pb: 2,
-  baseAttackBonus: 5, customAttackMod: 0, customDamageMod: 0,
-  diceCount: 2, diceType: 6, baseDamageMod: 3, baseDamageType: 'slashing',
-  critThreshold: 20, rollState: 'normal', elvenAccuracy: false, targetAC: 15,
-  fightingStyle: 'none',
-  rage: { active: false, bonus: 2 },
-  sneakAttack: { active: false, dice: 1 },
-  brutalCritical: { active: false, dice: 1 },
-  bardicInsp: { active: false, size: 6, type: 'attack' },
-  buffs: {
-    hexbladesCurse: false, gwm: false, bless: false, huntersMark: false, hex: false, divineFavor: false,
-    magicWeapon: false, holyWeapon: false, crusadersMantle: false, flameArrows: false,
-    smite: false, spiritShroud: false, elementalWeapon: false, cme: false
-  },
-  smiteLevel: 1, smiteUndead: false,
-  spiritShroudLevel: 3, spiritShroudType: 'radiant',
-  cmeLevel: 4, cmeType: 'fire',
-  onceBuffs: { zephyrStrike: false, boomingBlade: { active: false, tier: 0 }, greenFlameBlade: { active: false, tier: 0 } },
-  customDice:[],
-  targetResistances: damageTypes.reduce((acc, dt) => ({ ...acc,[dt.value]: 1 }), {})
+const storageNotice = ref('')
+function restore(key, defaults) {
+  try { return normalizeConfig(JSON.parse(localStorage.getItem(key)), defaults) }
+  catch { storageNotice.value = '浏览器无法读取配置，已使用默认值。'; return structuredClone(defaults) }
 }
-
-// === 配置 2：法术豁免 ===
-const defaultSaveConfig = {
-  spellDC: 15, targetSaveMod: 2, rollState: 'normal',
-  diceCount: 8, diceType: 6, flatMod: 0, damageType: 'fire', successEffect: 'half',
-  targetResistances: damageTypes.reduce((acc, dt) => ({ ...acc, [dt.value]: 1 }), {})
+const config = reactive(restore('dnd-calc-atk', defaultConfig))
+const saveConfig = reactive(restore('dnd-calc-save', defaultSaveConfig))
+function persist(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)) }
+  catch { storageNotice.value = '浏览器未允许保存配置，本次计算仍可使用。' }
 }
-
-const config = reactive(JSON.parse(JSON.stringify(defaultConfig)))
-const saveConfig = reactive(JSON.parse(JSON.stringify(defaultSaveConfig)))
-
-onMounted(() => {
-  const savedAtk = localStorage.getItem('dnd-calc-atk')
-  const savedSave = localStorage.getItem('dnd-calc-save')
-  if (savedAtk) try { Object.assign(config, JSON.parse(savedAtk)) } catch (e) {}
-  if (savedSave) try { Object.assign(saveConfig, JSON.parse(savedSave)) } catch (e) {}
-})
-
-watch(config, (v) => localStorage.setItem('dnd-calc-atk', JSON.stringify(v)), { deep: true })
-watch(saveConfig, (v) => localStorage.setItem('dnd-calc-save', JSON.stringify(v)), { deep: true })
-
-const resetConfig = () => {
-  if(activeTab.value === 'attack') Object.assign(config, JSON.parse(JSON.stringify(defaultConfig)))
-  else Object.assign(saveConfig, JSON.parse(JSON.stringify(defaultSaveConfig)))
-}
-
-const addCustomDice = () => config.customDice.push({ count: 1, type: 6, dmgType: 'force', frequency: 'perHit' })
-const removeCustomDice = (idx) => config.customDice.splice(idx, 1)
-
-// ======================== 【引擎：武器攻击】 ========================
-const splitDamageSources = computed(() => {
-  const perHit =[], once =[], activeTypes = new Set()
-
-  let baseFlat = config.baseDamageMod + config.customDamageMod
-  if (config.fightingStyle === 'dueling') baseFlat += 2
-  if (config.rage.active) baseFlat += config.rage.bonus
-  if (config.buffs.gwm) baseFlat += 10
-  if (config.buffs.magicWeapon) baseFlat += 1
-  if (config.buffs.hexbladesCurse) baseFlat += config.pb // 咒剑诅咒：伤害掷骰加 PB
-
-  perHit.push({ count: config.diceCount, type: config.diceType, flat: baseFlat, dmgType: config.baseDamageType, isBase: true })
-  
-  if (config.buffs.huntersMark) perHit.push({ count: 1, type: 6, flat: 0, dmgType: 'force' })
-  if (config.buffs.hex) perHit.push({ count: 1, type: 6, flat: 0, dmgType: 'necrotic' })
-  if (config.buffs.divineFavor) perHit.push({ count: 1, type: 4, flat: 0, dmgType: 'radiant' })
-  if (config.buffs.holyWeapon) perHit.push({ count: 2, type: 8, flat: 0, dmgType: 'radiant' })
-  if (config.buffs.crusadersMantle) perHit.push({ count: 1, type: 4, flat: 0, dmgType: 'radiant' })
-  if (config.buffs.flameArrows) perHit.push({ count: 1, type: 6, flat: 0, dmgType: 'fire' })
-  if (config.buffs.smite) perHit.push({ count: Math.min(config.smiteLevel + 1, 5) + (config.smiteUndead ? 1 : 0), type: 8, flat: 0, dmgType: 'radiant' })
-  if (config.buffs.spiritShroud) perHit.push({ count: 1 + Math.floor((config.spiritShroudLevel - 3) / 2), type: 8, flat: 0, dmgType: config.spiritShroudType })
-  if (config.buffs.cme) perHit.push({ count: config.cmeLevel - 2, type: 8, flat: 0, dmgType: config.cmeType })
-
-  if (config.sneakAttack.active) once.push({ count: config.sneakAttack.dice, type: 6, flat: 0, dmgType: config.baseDamageType })
-  if (config.onceBuffs.zephyrStrike) once.push({ count: 1, type: 8, flat: 0, dmgType: 'force' })
-  if (config.onceBuffs.boomingBlade.active && config.onceBuffs.boomingBlade.tier>0) once.push({ count: config.onceBuffs.boomingBlade.tier, type: 8, flat: 0, dmgType: 'thunder' })
-  if (config.onceBuffs.greenFlameBlade.active && config.onceBuffs.greenFlameBlade.tier>0) once.push({ count: config.onceBuffs.greenFlameBlade.tier, type: 8, flat: 0, dmgType: 'fire' })
-  if (config.bardicInsp.active && config.bardicInsp.type === 'damage') once.push({ count: 1, type: config.bardicInsp.size, flat: 0, dmgType: config.baseDamageType })
-
-  config.customDice.forEach(d => {
-    const src = { count: d.count, type: d.type, flat: 0, dmgType: d.dmgType }
-    if (d.frequency === 'perHit') perHit.push(src); else once.push(src);
-  })
-
-  perHit.forEach(d => { if(d.count>0 || d.flat!==0) activeTypes.add(d.dmgType) })
-  once.forEach(d => { if(d.count>0) activeTypes.add(d.dmgType) })
-
-  return { perHit, once, activeTypes: Array.from(activeTypes) }
-})
-
-const activeDamageTypes = computed(() => damageTypes.filter(dt => splitDamageSources.value.activeTypes.includes(dt.value)))
-
-const buildFormula = (list) => {
-  let parts =[], flat = 0
-  list.forEach(src => { if(src.count>0) parts.push(`${src.count}d${src.type}[${dtDict[src.dmgType]}]`); flat+=src.flat })
-  let res = parts.join(' + ')
-  if(flat!==0) res += flat>0 ? ` + ${flat}` : ` - ${Math.abs(flat)}`
-  return res || '0'
+watch(config, value => persist('dnd-calc-atk', value), {deep:true})
+watch(saveConfig, value => persist('dnd-calc-save', value), {deep:true})
+const resetConfig = () => Object.assign(activeTab.value === 'attack' ? config : saveConfig, structuredClone(activeTab.value === 'attack' ? defaultConfig : defaultSaveConfig))
+const addCustomDice = () => { if(config.customDice.length < 30) config.customDice.push({count:1,type:6,dmgType:'force',frequency:'perHit'}) }
+const removeCustomDice = idx => config.customDice.splice(idx,1)
+const splitDamageSources = computed(() => buildDamageSources(config))
+const activeDamageTypes = computed(() => damageTypes.filter(t=>splitDamageSources.value.activeTypes.includes(t.value)))
+function buildFormula(list) {
+  return list.map(s => `${s.count ? `${s.count}d${s.type}` : '0'}${s.flat ? ` ${s.flat>0?'+':'−'} ${Math.abs(s.flat)}` : ''}[${dtDict[s.dmgType]}]`).join(' + ') || '0'
 }
 const perHitFormula = computed(() => buildFormula(splitDamageSources.value.perHit))
 const onceFormula = computed(() => buildFormula(splitDamageSources.value.once))
-
-const effectiveAttackBonus = computed(() => {
-  let atk = config.baseAttackBonus + config.customAttackMod
-  if (config.fightingStyle === 'archery') atk += 2
-  if (config.buffs.gwm) atk -= 5
-  if (config.buffs.bless) atk += 2.5
-  if (config.buffs.magicWeapon) atk += 1
-  if (config.bardicInsp.active && config.bardicInsp.type === 'attack') atk += (config.bardicInsp.size + 1) / 2
-  return atk
+const effectiveAttackBonus = computed(() => attackBonus(config))
+const calculateDPRForAC = ac => calculateAttack(config, ac)
+const currentDPR = computed(() => calculateAttack(config))
+const acTableRange = Array.from({length:16}, (_,i)=>i+10)
+const calculateSaveDPRForMod = mod => calculateSave(saveConfig,mod)
+const currentSaveDPR = computed(() => calculateSave(saveConfig))
+const saveTableRange = Array.from({length:16}, (_,i)=>i-1)
+const inputNotice = computed(() => {
+  const value = activeTab.value === 'attack' ? config : saveConfig;
+  const safe = normalizeConfig(value, activeTab.value === 'attack' ? defaultConfig : defaultSaveConfig);
+  return JSON.stringify(value) !== JSON.stringify(safe) ? '部分输入为空或超出范围，当前结果使用默认值或范围边界；请检查输入。' : '';
 })
-
-const getDiceAvg = (type, applyGWF) => {
-  if (applyGWF && config.fightingStyle === 'gwf') {
-    if(type===4)return 3.25; if(type===6)return 4.0; if(type===8)return 4.875; if(type===10)return 5.8; if(type===12)return 6.75;
-  }
-  return (type + 1) / 2
-}
-
-const calculateDPRForAC = (targetAC) => {
-  let hits = 0, crits = 0, rolls = 0
-  let currentCrit = config.critThreshold
-  
-  // 咒剑诅咒：19~20重击范围判定（如果原本是18则保留18）
-  if (config.buffs.hexbladesCurse && currentCrit > 19) currentCrit = 19
-
-  const evalRoll = (r) => {
-    if (r >= currentCrit) crits++; else if (r > 1 && r + effectiveAttackBonus.value >= targetAC) hits++;
-  }
-
-  if (config.rollState === 'normal') { rolls = 20; for(let i=1;i<=20;i++) evalRoll(i); } 
-  else if (config.rollState === 'advantage') {
-    if(config.elvenAccuracy){ rolls = 8000; for(let i=1;i<=20;i++)for(let j=1;j<=20;j++)for(let k=1;k<=20;k++) evalRoll(Math.max(i,j,k)) }
-    else { rolls = 400; for(let i=1;i<=20;i++)for(let j=1;j<=20;j++) evalRoll(Math.max(i,j)) }
-  } 
-  else { rolls = 400; for(let i=1;i<=20;i++)for(let j=1;j<=20;j++) evalRoll(Math.min(i,j)) }
-
-  const normRate = hits/rolls, critRate = crits/rolls, missRate = 1-(normRate+critRate)
-  
-  let pN=0, pC=0; splitDamageSources.value.perHit.forEach(s => {
-    let r = config.targetResistances[s.dmgType]??1, avg = s.count*getDiceAvg(s.type, s.isBase)
-    pN += (avg + s.flat)*r; pC += (avg*(s.isBase&&config.brutalCritical.active ? 2+config.brutalCritical.dice : 2) + s.flat)*r
-  })
-  
-  let oN=0, oC=0; splitDamageSources.value.once.forEach(s => {
-    let r = config.targetResistances[s.dmgType]??1, avg = s.count*getDiceAvg(s.type, false)
-    oN += avg*r; oC += avg*2*r
-  })
-
-  let expectedOnceDPR = 0
-  if (normRate+critRate > 0) {
-    let pAtLeastOne = 1 - Math.pow(missRate, config.attacksPerRound)
-    let wN = normRate/(normRate+critRate), wC = critRate/(normRate+critRate)
-    expectedOnceDPR = pAtLeastOne * (wN*oN + wC*oC)
-  }
-
-  return { 
-    normalHitRate: normRate, critRate: critRate, avgPerHitNorm: pN, avgPerHitCrit: pC, avgOnceNorm: oN, avgOnceCrit: oC,
-    roundTotalDPR: config.attacksPerRound*(normRate*pN + critRate*pC) + expectedOnceDPR 
-  }
-}
-
-const currentDPR = computed(() => calculateDPRForAC(config.targetAC))
-const acTableRange = Array.from({length: 16}, (_, i) => i + 10)
-
-// ======================== 【引擎：法术豁免】 ========================
-
-const calculateSaveDPRForMod = (mod) => {
-  let success = 0, fails = 0, rolls = 0
-  const evalSave = (r) => {
-    // 根据5e 2024规则，大成功必过，大失败必不过
-    if (r === 20) success++;
-    else if (r === 1) fails++;
-    else if (r + mod >= saveConfig.spellDC) success++;
-    else fails++;
-  }
-
-  if (saveConfig.rollState === 'normal') { rolls = 20; for(let i=1;i<=20;i++) evalSave(i) }
-  else if (saveConfig.rollState === 'advantage') { rolls = 400; for(let i=1;i<=20;i++)for(let j=1;j<=20;j++) evalSave(Math.max(i,j)) }
-  else { rolls = 400; for(let i=1;i<=20;i++)for(let j=1;j<=20;j++) evalSave(Math.min(i,j)) }
-
-  const successRate = success / rolls
-  const failRate = fails / rolls
-
-  // 计算基础伤害
-  const rawDamage = (saveConfig.diceCount * ((saveConfig.diceType + 1) / 2)) + saveConfig.flatMod
-  const resMult = saveConfig.targetResistances[saveConfig.damageType] ?? 1
-
-  // 失败吃满伤，成功受半伤或无伤
-  const damageOnFail = rawDamage * resMult
-  const damageOnSuccess = saveConfig.successEffect === 'half' ? (rawDamage * 0.5 * resMult) : 0
-
-  return {
-    failRate, successRate, rawDamage,
-    expectedDpr: (failRate * damageOnFail) + (successRate * damageOnSuccess)
-  }
-}
-
-const currentSaveDPR = computed(() => calculateSaveDPRForMod(saveConfig.targetSaveMod))
-const saveTableRange = Array.from({length: 16}, (_, i) => i - 1) // -1 到 14 的豁免加值
 </script>
 
 <style scoped>
@@ -683,4 +512,42 @@ const saveTableRange = Array.from({length: 16}, (_, i) => i - 1) // -1 到 14 �
 .ac-table th, .ac-table td { border: 1px solid #334155; padding: 6px 3px; }
 .ac-table th { background: #0f172a; color: #94a3b8; }
 .highlight-ac { background: #047857; font-weight: bold; color: white; border: 2px solid #10b981; }
+
+.home-link { display:block; text-align:left; color:#94a3b8; font-size:13px; margin-bottom:18px; text-decoration:none; }
+.rules-note { color:#94a3b8; border:1px solid #334155; border-radius:8px; padding:12px 16px; font-size:13px; line-height:1.7; }
+.rules-note summary { cursor:pointer; color:#cbd5e1; }
+.rules-note p { margin:10px 0; }
+.rules-note a { color:#38bdf8; }
+.notice { padding:12px; color:#fde68a; background:#422006; border-radius:8px; }
+.ac-table-container { overflow-x:auto; }
+.ac-table { min-width:620px; }
+.input-group { min-width:0; }
+input, select { max-width:100%; min-width:0; }
+button:disabled { opacity:.5; cursor:not-allowed; }
+@media (max-width:850px) {
+  .calculator-container { padding:16px; border-radius:0; }
+  .main-content { flex-direction:column; }
+  .left-panel, .right-panel { min-width:0; width:100%; flex:auto; }
+  .right-panel { position:static; }
+  .reset-btn { position:static; margin-top:16px; }
+  .card { padding:16px; }
+  .header h1 { font-size:24px; }
+}
+@media (max-width:480px) {
+  .calculator-container { padding:12px; }
+  .tabs { gap:8px; }
+  .tabs button { padding:12px 10px; font-size:14px; flex:1; }
+  .grid-3 { gap:8px; }
+  .grid-2, .res-grid { gap:8px; }
+  .switch-grid { grid-template-columns:1fr; }
+  .input-row { gap:6px; }
+  .input-row .input-group { flex:1 1 36%; }
+  .cross { display:none; }
+  .custom-dice-row { flex-wrap:wrap; gap:6px; }
+  .stat-value { font-size:16px; }
+  .stat-label { font-size:11px; }
+  .radio-buttons { flex-wrap:wrap; }
+  input[type="number"], select { font-size:16px !important; min-height:36px; }
+}
+@media (prefers-reduced-motion:reduce) { .main-content { animation:none; } * { transition:none !important; } }
 </style>
