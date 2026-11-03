@@ -1,0 +1,4644 @@
+{
+  "retrieved": "2026-11-03",
+  "source": "https://5e.kiwee.top/classes.html",
+  "sources": {
+    "PHB": "玩家手册（2014）",
+    "DMG": "城主指南（2014）",
+    "SCAG": "剑湾冒险者指南",
+    "XGE": "珊娜萨的万事指南",
+    "EGW": "荒洲探险家指南",
+    "TCE": "塔莎的万事坩埚",
+    "VRGR": "范·里希腾的鸦阁魔域指南",
+    "FTD": "费资本的巨龙宝库",
+    "BGG": "毕格比巨献：巨人之荣耀"
+  },
+  "classes": [
+    {
+      "id": "barbarian",
+      "name": "野蛮人",
+      "source": "PHB",
+      "group": "martial",
+      "features": [
+        {
+          "name": "狂暴",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "无甲防御",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "危机感应",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "鲁莽攻击",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "原初道途",
+          "level": 3,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 4,
+          "source": "PHB"
+        },
+        {
+          "name": "额外攻击",
+          "level": 5,
+          "source": "PHB"
+        },
+        {
+          "name": "快速移动",
+          "level": 5,
+          "source": "PHB"
+        },
+        {
+          "name": "道途特性",
+          "level": 6,
+          "source": "PHB"
+        },
+        {
+          "name": "野性直觉",
+          "level": 7,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "凶蛮重击(1骰)",
+          "level": 9,
+          "source": "PHB"
+        },
+        {
+          "name": "道途特性",
+          "level": 10,
+          "source": "PHB"
+        }
+      ],
+      "subclasses": [
+        {
+          "id": "barbarian-PHB-狂战士",
+          "name": "狂战士道途",
+          "shortName": "狂战士",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "狂怒",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "无我狂暴",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "威慑之姿",
+              "level": 10,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "barbarian-PHB-图腾武者",
+          "name": "图腾武者道途",
+          "shortName": "图腾武者",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "熊",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "鹰",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "赤鹿",
+              "level": 3,
+              "source": "SCAG"
+            },
+            {
+              "name": "老虎",
+              "level": 3,
+              "source": "SCAG"
+            },
+            {
+              "name": "狼",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "精魄寻者",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "图腾精魄",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "熊",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "鹰",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "赤鹿",
+              "level": 6,
+              "source": "SCAG"
+            },
+            {
+              "name": "老虎",
+              "level": 6,
+              "source": "SCAG"
+            },
+            {
+              "name": "狼",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "兽之形",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "精魂行者",
+              "level": 10,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "barbarian-SCAG-战狂",
+          "name": "战狂道途",
+          "shortName": "战狂",
+          "source": "SCAG",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "战狂装甲",
+              "level": 3,
+              "source": "SCAG"
+            },
+            {
+              "name": "限制——限定矮人",
+              "level": 3,
+              "source": "SCAG"
+            },
+            {
+              "name": "凶蛮无羁",
+              "level": 6,
+              "source": "SCAG"
+            },
+            {
+              "name": "战狂冲锋",
+              "level": 10,
+              "source": "SCAG"
+            }
+          ]
+        },
+        {
+          "id": "barbarian-XGE-先祖守卫",
+          "name": "先祖守卫道途",
+          "shortName": "先祖守卫",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "先祖护卫",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "精魂之盾",
+              "level": 6,
+              "source": "XGE"
+            },
+            {
+              "name": "问道精魂",
+              "level": 10,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "barbarian-XGE-风暴先声",
+          "name": "风暴先驱道途",
+          "shortName": "风暴先声",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "荒漠",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "海洋",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "冻原",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "风暴灵光",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "荒漠",
+              "level": 6,
+              "source": "XGE"
+            },
+            {
+              "name": "海洋",
+              "level": 6,
+              "source": "XGE"
+            },
+            {
+              "name": "冻原",
+              "level": 6,
+              "source": "XGE"
+            },
+            {
+              "name": "风暴之魂",
+              "level": 6,
+              "source": "XGE"
+            },
+            {
+              "name": "风暴之盾",
+              "level": 10,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "barbarian-XGE-狂热者",
+          "name": "狂热者道途",
+          "shortName": "狂热者",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "神性之怒",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "神之勇者",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "专心炽志",
+              "level": 6,
+              "source": "XGE"
+            },
+            {
+              "name": "狂热威仪",
+              "level": 10,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "barbarian-TCE-野兽",
+          "name": "野兽道途",
+          "shortName": "野兽",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "野兽之形",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "兽性之魂",
+              "level": 6,
+              "source": "TCE"
+            },
+            {
+              "name": "感染之怒",
+              "level": 10,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "barbarian-TCE-狂野魔法",
+          "name": "狂野魔法道途",
+          "shortName": "狂野魔法",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "魔法察觉",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "狂野浪潮",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "振奋魔法",
+              "level": 6,
+              "source": "TCE"
+            },
+            {
+              "name": "无常反冲",
+              "level": 10,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "barbarian-BGG-巨人",
+          "name": "巨人道途",
+          "shortName": "巨人",
+          "source": "BGG",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "巨人之力",
+              "level": 3,
+              "source": "BGG"
+            },
+            {
+              "name": "巨人之灾",
+              "level": 3,
+              "source": "BGG"
+            },
+            {
+              "name": "元素战刃",
+              "level": 6,
+              "source": "BGG"
+            },
+            {
+              "name": "伟力推动",
+              "level": 10,
+              "source": "BGG"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fighter",
+      "name": "战士",
+      "source": "PHB",
+      "group": "martial",
+      "features": [
+        {
+          "name": "战斗风格",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "回气",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "动作如潮",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "武术范型",
+          "level": 3,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 4,
+          "source": "PHB"
+        },
+        {
+          "name": "额外攻击",
+          "level": 5,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 6,
+          "source": "PHB"
+        },
+        {
+          "name": "范型特性",
+          "level": 7,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "不屈",
+          "level": 9,
+          "source": "PHB"
+        },
+        {
+          "name": "范型特性",
+          "level": 10,
+          "source": "PHB"
+        }
+      ],
+      "subclasses": [
+        {
+          "id": "fighter-PHB-战斗大师",
+          "name": "战斗大师",
+          "shortName": "战斗大师",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "卓越战技",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "战技选项",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "战技",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "战争学徒",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "额外战技",
+              "level": 7,
+              "source": "PHB"
+            },
+            {
+              "name": "额外卓越骰",
+              "level": 7,
+              "source": "PHB"
+            },
+            {
+              "name": "料敌机先",
+              "level": 7,
+              "source": "PHB"
+            },
+            {
+              "name": "额外战技",
+              "level": 10,
+              "source": "PHB"
+            },
+            {
+              "name": "精通卓越战技(d10)",
+              "level": 10,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "fighter-PHB-勇士",
+          "name": "勇士",
+          "shortName": "勇士",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "精通重击",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "运动健将",
+              "level": 7,
+              "source": "PHB"
+            },
+            {
+              "name": "额外战斗风格",
+              "level": 10,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "fighter-PHB-奥法骑士",
+          "name": "奥法骑士",
+          "shortName": "奥法骑士",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "施法",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "武器联结",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "战争魔法",
+              "level": 7,
+              "source": "PHB"
+            },
+            {
+              "name": "奥法打击",
+              "level": 10,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "fighter-SCAG-紫龙骑士(旗将)",
+          "name": "紫龙骑士(旗将)",
+          "shortName": "紫龙骑士(旗将)",
+          "source": "SCAG",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "重整姿态",
+              "level": 3,
+              "source": "SCAG"
+            },
+            {
+              "name": "限制：限定骑士",
+              "level": 3,
+              "source": "SCAG"
+            },
+            {
+              "name": "皇家特使",
+              "level": 7,
+              "source": "SCAG"
+            },
+            {
+              "name": "振奋之潮",
+              "level": 10,
+              "source": "SCAG"
+            }
+          ]
+        },
+        {
+          "id": "fighter-XGE-魔射手",
+          "name": "魔射手",
+          "shortName": "魔射手",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "魔箭学识",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "奥术射击",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "奥术射击选项",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "额外奥术射击选项",
+              "level": 7,
+              "source": "XGE"
+            },
+            {
+              "name": "曲线射击",
+              "level": 7,
+              "source": "XGE"
+            },
+            {
+              "name": "注魔箭矢",
+              "level": 7,
+              "source": "XGE"
+            },
+            {
+              "name": "额外奥术射击选项",
+              "level": 10,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "fighter-XGE-骁骑士",
+          "name": "骁骑士",
+          "shortName": "骁骑士",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "附赠熟练项",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "生而为骑",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "坚定之印",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "守护战技",
+              "level": 7,
+              "source": "XGE"
+            },
+            {
+              "name": "坚守战线",
+              "level": 10,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "fighter-XGE-武士",
+          "name": "武士",
+          "shortName": "武士",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "附赠熟练项",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "斗战之魂",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "雅臣",
+              "level": 7,
+              "source": "XGE"
+            },
+            {
+              "name": "不懈",
+              "level": 10,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "fighter-EGW-回音骑士",
+          "name": "回音骑士",
+          "shortName": "回音骑士",
+          "source": "EGW",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "回音显现",
+              "level": 3,
+              "source": "EGW"
+            },
+            {
+              "name": "释放化身",
+              "level": 3,
+              "source": "EGW"
+            },
+            {
+              "name": "回音现身",
+              "level": 7,
+              "source": "EGW"
+            },
+            {
+              "name": "影之殉难",
+              "level": 10,
+              "source": "EGW"
+            }
+          ]
+        },
+        {
+          "id": "fighter-TCE-灵能武士",
+          "name": "灵能武士",
+          "shortName": "灵能武士",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "庇护力场",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "灵能打击",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "念力控物",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "灵能力量",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "灵力跃动",
+              "level": 7,
+              "source": "TCE"
+            },
+            {
+              "name": "念力突刺",
+              "level": 7,
+              "source": "TCE"
+            },
+            {
+              "name": "念力精通",
+              "level": 7,
+              "source": "TCE"
+            },
+            {
+              "name": "意念守护",
+              "level": 10,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "fighter-TCE-符文骑士",
+          "name": "符文骑士",
+          "shortName": "符文骑士",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "附赠熟练",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "巨人之力",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "符文雕刻者",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "额外已知符文",
+              "level": 7,
+              "source": "TCE"
+            },
+            {
+              "name": "符文之盾",
+              "level": 7,
+              "source": "TCE"
+            },
+            {
+              "name": "额外已知符文",
+              "level": 10,
+              "source": "TCE"
+            },
+            {
+              "name": "奇伟身躯",
+              "level": 10,
+              "source": "TCE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "monk",
+      "name": "武僧",
+      "source": "PHB",
+      "group": "martial",
+      "features": [
+        {
+          "name": "武艺",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "无甲防御",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "疾风连击",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "Ki",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "坚强防御",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "疾步如风",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "无甲移动",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "拨挡飞弹",
+          "level": 3,
+          "source": "PHB"
+        },
+        {
+          "name": "修行宗派",
+          "level": 3,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 4,
+          "source": "PHB"
+        },
+        {
+          "name": "轻身坠",
+          "level": 4,
+          "source": "PHB"
+        },
+        {
+          "name": "额外攻击",
+          "level": 5,
+          "source": "PHB"
+        },
+        {
+          "name": "震慑拳",
+          "level": 5,
+          "source": "PHB"
+        },
+        {
+          "name": "真气驻拳",
+          "level": 6,
+          "source": "PHB"
+        },
+        {
+          "name": "宗派特性",
+          "level": 6,
+          "source": "PHB"
+        },
+        {
+          "name": "反射闪避",
+          "level": 7,
+          "source": "PHB"
+        },
+        {
+          "name": "心如止水",
+          "level": 7,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "无甲移动增效",
+          "level": 9,
+          "source": "PHB"
+        },
+        {
+          "name": "百病不侵",
+          "level": 10,
+          "source": "PHB"
+        }
+      ],
+      "subclasses": [
+        {
+          "id": "monk-PHB-幽影",
+          "name": "暗影宗",
+          "shortName": "幽影",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "暗影技艺",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "暗影步",
+              "level": 6,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "monk-PHB-四象",
+          "name": "四象宗",
+          "shortName": "四象",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "四象门徒",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "法门",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "额外法门",
+              "level": 6,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "monk-PHB-散打",
+          "name": "散打宗",
+          "shortName": "散打",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "散打技巧",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "混元体",
+              "level": 6,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "monk-SCAG-永亡",
+          "name": "永亡宗",
+          "shortName": "永亡",
+          "source": "SCAG",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "往生咒",
+              "level": 3,
+              "source": "SCAG"
+            },
+            {
+              "name": "索命镰",
+              "level": 6,
+              "source": "SCAG"
+            }
+          ]
+        },
+        {
+          "id": "monk-XGE-醉拳",
+          "name": "醉拳宗",
+          "shortName": "醉拳",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "附赠熟练",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "醉拳技巧",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "鲤鱼打挺",
+              "level": 6,
+              "source": "XGE"
+            },
+            {
+              "name": "借力打力",
+              "level": 6,
+              "source": "XGE"
+            },
+            {
+              "name": "酣醉若狂",
+              "level": 6,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "monk-XGE-剑圣",
+          "name": "剑圣宗",
+          "shortName": "剑圣",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "灵巧格挡",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "持弓审固",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "剑圣之途",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "人剑合一",
+              "level": 6,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "monk-XGE-日魂",
+          "name": "日魂宗",
+          "shortName": "日魂",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "耀阳箭",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "热能袭",
+              "level": 6,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "monk-TCE-命流",
+          "name": "命流宗",
+          "shortName": "命流",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "夺命之手",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "予命之手",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "操命本事",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "生死之触",
+              "level": 6,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "monk-TCE-星我",
+          "name": "星我宗",
+          "shortName": "星我",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "星我之臂",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "你的星我形态",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "星我之容",
+              "level": 6,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "monk-FTD-神龙",
+          "name": "神龙宗",
+          "shortName": "神龙",
+          "source": "FTD",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "龙之息",
+              "level": 3,
+              "source": "FTD"
+            },
+            {
+              "name": "龙之徒",
+              "level": 3,
+              "source": "FTD"
+            },
+            {
+              "name": "龙翼翱翔",
+              "level": 6,
+              "source": "FTD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paladin",
+      "name": "圣武士",
+      "source": "PHB",
+      "group": "martial",
+      "features": [
+        {
+          "name": "神圣感知",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "圣疗",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "至圣斩",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "战斗风格",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "施法",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "引导神力",
+          "level": 3,
+          "source": "PHB"
+        },
+        {
+          "name": "神佑",
+          "level": 3,
+          "source": "PHB"
+        },
+        {
+          "name": "神圣誓言",
+          "level": 3,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 4,
+          "source": "PHB"
+        },
+        {
+          "name": "额外攻击",
+          "level": 5,
+          "source": "PHB"
+        },
+        {
+          "name": "守护灵光",
+          "level": 6,
+          "source": "PHB"
+        },
+        {
+          "name": "圣誓特性",
+          "level": 7,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "勇气灵光",
+          "level": 10,
+          "source": "PHB"
+        }
+      ],
+      "subclasses": [
+        {
+          "id": "paladin-PHB-奉献",
+          "name": "奉献之誓",
+          "shortName": "奉献",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "引导神力",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "圣誓法术",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "神圣武器",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "奉献之信条",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "驱散不洁",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "奉献灵光",
+              "level": 7,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "paladin-PHB-古贤",
+          "name": "古贤之誓",
+          "shortName": "古贤",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "引导神力",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "自然之怒",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "圣誓法术",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "古贤之信条",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "驱散无信者",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "守御灵光",
+              "level": 7,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "paladin-PHB-复仇",
+          "name": "复仇之誓",
+          "shortName": "复仇",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "破胆叱喝",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "引导神力",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "圣誓法术",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "复仇之信条",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "仇敌誓言",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "坚韧复仇",
+              "level": 7,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "paladin-DMG-破誓者",
+          "name": "破誓者",
+          "shortName": "破誓者",
+          "source": "DMG",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "引导神力",
+              "level": 3,
+              "source": "DMG"
+            },
+            {
+              "name": "控制亡灵",
+              "level": 3,
+              "source": "DMG"
+            },
+            {
+              "name": "恐怖显现",
+              "level": 3,
+              "source": "DMG"
+            },
+            {
+              "name": "破誓者法术",
+              "level": 3,
+              "source": "DMG"
+            },
+            {
+              "name": "憎恨灵光",
+              "level": 7,
+              "source": "DMG"
+            }
+          ]
+        },
+        {
+          "id": "paladin-SCAG-王冠",
+          "name": "王冠之誓",
+          "shortName": "王冠",
+          "source": "SCAG",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "捍卫挑战",
+              "level": 3,
+              "source": "SCAG"
+            },
+            {
+              "name": "引导神力",
+              "level": 3,
+              "source": "SCAG"
+            },
+            {
+              "name": "圣誓法术",
+              "level": 3,
+              "source": "SCAG"
+            },
+            {
+              "name": "王冠之信条",
+              "level": 3,
+              "source": "SCAG"
+            },
+            {
+              "name": "扭转局势",
+              "level": 3,
+              "source": "SCAG"
+            },
+            {
+              "name": "神圣誓忠",
+              "level": 7,
+              "source": "SCAG"
+            }
+          ]
+        },
+        {
+          "id": "paladin-XGE-征服",
+          "name": "征服之誓",
+          "shortName": "征服",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "引导神力",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "征服威压",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "导引打击",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "圣誓法术",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "征服之信条",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "征服灵光",
+              "level": 7,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "paladin-XGE-救赎",
+          "name": "救赎之誓",
+          "shortName": "救赎",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "引导神力",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "和平使节",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "圣誓法术",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "叱喝暴力",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "救赎之信条",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "护卫灵光",
+              "level": 7,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "paladin-TCE-荣耀",
+          "name": "荣耀之誓",
+          "shortName": "荣耀",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "引导神力",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "圣誓法术",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "荣耀之信条",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "鼓舞斩",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "绝伦健将",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "迅捷灵光",
+              "level": 7,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "paladin-TCE-守望",
+          "name": "守望之誓",
+          "shortName": "守望",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "引导神力",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "圣誓法术",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "守望之信条",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "驱散异域",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "守望之志",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "哨卫灵光",
+              "level": 7,
+              "source": "TCE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ranger",
+      "name": "游侠",
+      "source": "PHB",
+      "group": "martial",
+      "features": [
+        {
+          "name": "宿敌",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "自然探索者",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "战斗风格",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "施法",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "原初意识",
+          "level": 3,
+          "source": "PHB"
+        },
+        {
+          "name": "游侠范型",
+          "level": 3,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 4,
+          "source": "PHB"
+        },
+        {
+          "name": "额外攻击",
+          "level": 5,
+          "source": "PHB"
+        },
+        {
+          "name": "增加宿敌及偏好环境",
+          "level": 6,
+          "source": "PHB"
+        },
+        {
+          "name": "范型特性",
+          "level": 7,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "大地行者",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "蔽于平野",
+          "level": 10,
+          "source": "PHB"
+        },
+        {
+          "name": "增加偏好环境",
+          "level": 10,
+          "source": "PHB"
+        }
+      ],
+      "subclasses": [
+        {
+          "id": "ranger-PHB-驯兽师",
+          "name": "驯兽师",
+          "shortName": "驯兽师",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "原初伴侣",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "游侠伴侣",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "特殊训练",
+              "level": 7,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "ranger-PHB-猎人",
+          "name": "猎人",
+          "shortName": "猎人",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "灭族者",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "猎杀技艺",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "巨像屠夫",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "巨人杀手",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "防守战术",
+              "level": 7,
+              "source": "PHB"
+            },
+            {
+              "name": "冲出重围",
+              "level": 7,
+              "source": "PHB"
+            },
+            {
+              "name": "多重防御",
+              "level": 7,
+              "source": "PHB"
+            },
+            {
+              "name": "钢铁意志",
+              "level": 7,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "ranger-XGE-幽域追踪者",
+          "name": "幽域追踪者",
+          "shortName": "幽域追踪者",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "恐惧伏击",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "幽域追踪者魔法",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "阴影视野",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "钢铁意志",
+              "level": 7,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "ranger-XGE-边界行者",
+          "name": "边界行者",
+          "shortName": "边界行者",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "侦测传送门",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "边界行者魔法",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "位面战士",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "以太漫步",
+              "level": 7,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "ranger-XGE-怪物杀手",
+          "name": "怪物杀手",
+          "shortName": "怪物杀手",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "猎手感知",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "怪物杀手魔法",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "狩猎开始",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "异能防护",
+              "level": 7,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "ranger-TCE-妖精漫游者",
+          "name": "妖精漫游者",
+          "shortName": "妖精漫游者",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "哀惧灵袭",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "妖精漫游者魔法",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "妖冶娴都",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "妖思魅缕",
+              "level": 7,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "ranger-TCE-集群守卫",
+          "name": "集群守卫",
+          "shortName": "集群守卫",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "蜂聚集群",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "集群守卫魔法",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "翻腾浪涌",
+              "level": 7,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "ranger-FTD-龙兽守卫",
+          "name": "龙兽守卫",
+          "shortName": "龙兽守卫",
+          "source": "FTD",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "龙族赠礼",
+              "level": 3,
+              "source": "FTD"
+            },
+            {
+              "name": "龙兽伙伴",
+              "level": 3,
+              "source": "FTD"
+            },
+            {
+              "name": "牙鳞之联",
+              "level": 7,
+              "source": "FTD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rogue",
+      "name": "游荡者",
+      "source": "PHB",
+      "group": "martial",
+      "features": [
+        {
+          "name": "专精",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "偷袭",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "盗贼黑话",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "灵巧动作",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "游荡者范型",
+          "level": 3,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 4,
+          "source": "PHB"
+        },
+        {
+          "name": "直觉闪避",
+          "level": 5,
+          "source": "PHB"
+        },
+        {
+          "name": "专精",
+          "level": 6,
+          "source": "PHB"
+        },
+        {
+          "name": "反射闪避",
+          "level": 7,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "游荡者范型特性",
+          "level": 9,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 10,
+          "source": "PHB"
+        }
+      ],
+      "subclasses": [
+        {
+          "id": "rogue-PHB-诡术师",
+          "name": "诡术师",
+          "shortName": "诡术师",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "法师之手诈术",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "施法",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "诡术伏击",
+              "level": 9,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "rogue-PHB-刺客",
+          "name": "刺客",
+          "shortName": "刺客",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "暗杀",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "附赠熟练",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "专业渗透",
+              "level": 9,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "rogue-PHB-盗贼",
+          "name": "盗贼",
+          "shortName": "盗贼",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "快手",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "梁上君子",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "极效潜行",
+              "level": 9,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "rogue-XGE-调查员",
+          "name": "调查员",
+          "shortName": "调查员",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "辨谎之耳",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "鉴识之眼",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "战术洞悉",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "目不转睛",
+              "level": 9,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "rogue-XGE-策士",
+          "name": "策士",
+          "shortName": "策士",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "谋陷大师",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "战术大师",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "帷幄之士",
+              "level": 9,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "rogue-XGE-斥候",
+          "name": "斥候",
+          "shortName": "斥候",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "散兵战术",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "生存专家",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "优异灵活",
+              "level": 9,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "rogue-XGE-剑客",
+          "name": "剑客",
+          "shortName": "剑客",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "梦幻舞步",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "潇洒无畏",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "潇洒气质",
+              "level": 9,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "rogue-TCE-鬼魅",
+          "name": "鬼魅",
+          "shortName": "鬼魅",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "墓冢哀嚎",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "亡者余声",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "逝者遗物",
+              "level": 9,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "rogue-TCE-魂刃",
+          "name": "魂刃",
+          "shortName": "魂刃",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "灵振诀窍",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "心灵低语",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "灵能力量",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "心灵之刃",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "寻的攻击",
+              "level": 9,
+              "source": "TCE"
+            },
+            {
+              "name": "心灵传送",
+              "level": 9,
+              "source": "TCE"
+            },
+            {
+              "name": "灵魂之刃",
+              "level": 9,
+              "source": "TCE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bard",
+      "name": "吟游诗人",
+      "source": "PHB",
+      "group": "hybrid",
+      "features": [
+        {
+          "name": "吟游诗人激励",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "施法",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "万事通",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "休憩曲(d6)",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "吟游诗人学院",
+          "level": 3,
+          "source": "PHB"
+        },
+        {
+          "name": "专精",
+          "level": 3,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 4,
+          "source": "PHB"
+        },
+        {
+          "name": "诗人激励(d8)",
+          "level": 5,
+          "source": "PHB"
+        },
+        {
+          "name": "激励之源",
+          "level": 5,
+          "source": "PHB"
+        },
+        {
+          "name": "吟游学院特性",
+          "level": 6,
+          "source": "PHB"
+        },
+        {
+          "name": "反迷惑",
+          "level": 6,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "休憩曲(d8)",
+          "level": 9,
+          "source": "PHB"
+        },
+        {
+          "name": "诗人激励(d10)",
+          "level": 10,
+          "source": "PHB"
+        },
+        {
+          "name": "专精",
+          "level": 10,
+          "source": "PHB"
+        },
+        {
+          "name": "魔法奥秘",
+          "level": 10,
+          "source": "PHB"
+        }
+      ],
+      "subclasses": [
+        {
+          "id": "bard-PHB-逸闻",
+          "name": "逸闻学院",
+          "shortName": "逸闻",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "附赠熟练",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "语出惊人",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "额外魔法奥秘",
+              "level": 6,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "bard-PHB-勇气",
+          "name": "勇气学院",
+          "shortName": "勇气",
+          "source": "PHB",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "附赠熟练",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "战斗激励",
+              "level": 3,
+              "source": "PHB"
+            },
+            {
+              "name": "额外攻击",
+              "level": 6,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "bard-XGE-迷惑",
+          "name": "魅心学院",
+          "shortName": "迷惑",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "醉人表演",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "灵感织衣",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "威仪作锦",
+              "level": 6,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "bard-XGE-剑舞",
+          "name": "剑舞学院",
+          "shortName": "剑舞",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "守御剑舞",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "推击剑舞",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "乱击剑舞",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "剑舞",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "附赠熟练",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "战斗风格",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "额外攻击",
+              "level": 6,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "bard-XGE-低语",
+          "name": "低语学院",
+          "shortName": "低语",
+          "source": "XGE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "心灵之刃",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "惊骇之语",
+              "level": 3,
+              "source": "XGE"
+            },
+            {
+              "name": "低语光环",
+              "level": 6,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "bard-TCE-造物术",
+          "name": "创造学院",
+          "shortName": "造物术",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "潜能微尘",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "造物表演",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "活化表演",
+              "level": 6,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "bard-TCE-雄辩",
+          "name": "雄辩学院",
+          "shortName": "雄辩",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "巧舌如簧",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "扰神之词",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "不竭鼓舞",
+              "level": 6,
+              "source": "TCE"
+            },
+            {
+              "name": "统一言说",
+              "level": 6,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "bard-VRGR-精魂",
+          "name": "精魂学院",
+          "shortName": "精魂",
+          "source": "VRGR",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "呢喃指引",
+              "level": 3,
+              "source": "VRGR"
+            },
+            {
+              "name": "精魂法器",
+              "level": 3,
+              "source": "VRGR"
+            },
+            {
+              "name": "彼岸故事",
+              "level": 3,
+              "source": "VRGR"
+            },
+            {
+              "name": "精魂集会",
+              "level": 6,
+              "source": "VRGR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "warlock",
+      "name": "魔契师",
+      "source": "PHB",
+      "group": "hybrid",
+      "features": [
+        {
+          "name": "异界宗主",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "契约魔法",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "魔能祈唤",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "魔契恩泽",
+          "level": 3,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 4,
+          "source": "PHB"
+        },
+        {
+          "name": "异界宗主特性",
+          "level": 6,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "异界宗主特性",
+          "level": 10,
+          "source": "PHB"
+        }
+      ],
+      "subclasses": [
+        {
+          "id": "warlock-PHB-至高妖精",
+          "name": "至高妖精",
+          "shortName": "至高妖精",
+          "source": "PHB",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "妖精仪态",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "雾隐遁行",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "斗转星移",
+              "level": 10,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "warlock-PHB-邪魔",
+          "name": "邪魔宗主",
+          "shortName": "邪魔",
+          "source": "PHB",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "黑暗赐福",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "黑暗强运",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "邪魔体魄",
+              "level": 10,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "warlock-PHB-旧日支配者",
+          "name": "旧日支配者宗主",
+          "shortName": "旧日支配者",
+          "source": "PHB",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "唤醒心灵",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "熵光结界",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "思维之盾",
+              "level": 10,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "warlock-SCAG-不朽者",
+          "name": "不朽者宗主",
+          "shortName": "不朽者",
+          "source": "SCAG",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "历经死亡",
+              "level": 1,
+              "source": "SCAG"
+            },
+            {
+              "name": "悍不畏死",
+              "level": 6,
+              "source": "SCAG"
+            },
+            {
+              "name": "不朽之理",
+              "level": 10,
+              "source": "SCAG"
+            }
+          ]
+        },
+        {
+          "id": "warlock-XGE-天界",
+          "name": "天界宗主",
+          "shortName": "天界",
+          "source": "XGE",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "额外戏法",
+              "level": 1,
+              "source": "XGE"
+            },
+            {
+              "name": "治愈之光",
+              "level": 1,
+              "source": "XGE"
+            },
+            {
+              "name": "光耀之魂",
+              "level": 6,
+              "source": "XGE"
+            },
+            {
+              "name": "天界韧性",
+              "level": 10,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "warlock-XGE-咒剑",
+          "name": "咒剑宗主",
+          "shortName": "咒剑",
+          "source": "XGE",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "巫咒战士",
+              "level": 1,
+              "source": "XGE"
+            },
+            {
+              "name": "咒剑诅咒",
+              "level": 1,
+              "source": "XGE"
+            },
+            {
+              "name": "咒缚幽灵",
+              "level": 6,
+              "source": "XGE"
+            },
+            {
+              "name": "巫咒盔甲",
+              "level": 10,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "warlock-TCE-深海意志",
+          "name": "深海意志宗主",
+          "shortName": "深海意志",
+          "source": "TCE",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "海洋馈赠",
+              "level": 1,
+              "source": "TCE"
+            },
+            {
+              "name": "深海触手",
+              "level": 1,
+              "source": "TCE"
+            },
+            {
+              "name": "守卫缠绕",
+              "level": 6,
+              "source": "TCE"
+            },
+            {
+              "name": "海渊魂灵",
+              "level": 6,
+              "source": "TCE"
+            },
+            {
+              "name": "擒握触手",
+              "level": 10,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "warlock-TCE-巨灵",
+          "name": "巨灵宗主",
+          "shortName": "巨灵",
+          "source": "TCE",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "瓶中小憩",
+              "level": 1,
+              "source": "TCE"
+            },
+            {
+              "name": "巨灵之怒",
+              "level": 1,
+              "source": "TCE"
+            },
+            {
+              "name": "巨灵器皿",
+              "level": 1,
+              "source": "TCE"
+            },
+            {
+              "name": "元素赐福",
+              "level": 6,
+              "source": "TCE"
+            },
+            {
+              "name": "器皿庇护所",
+              "level": 10,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "warlock-VRGR-亡灵",
+          "name": "死灵宗主",
+          "shortName": "亡灵",
+          "source": "VRGR",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "战栗形态",
+              "level": 1,
+              "source": "VRGR"
+            },
+            {
+              "name": "坟冢之触",
+              "level": 6,
+              "source": "VRGR"
+            },
+            {
+              "name": "死疽躯壳",
+              "level": 10,
+              "source": "VRGR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wizard",
+      "name": "法师",
+      "source": "PHB",
+      "group": "hybrid",
+      "features": [
+        {
+          "name": "奥术回想",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "施法",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "奥术传承",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 4,
+          "source": "PHB"
+        },
+        {
+          "name": "奥术传承特性",
+          "level": 6,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "奥术传承特性",
+          "level": 10,
+          "source": "PHB"
+        }
+      ],
+      "subclasses": [
+        {
+          "id": "wizard-TCE-剑咏者",
+          "name": "剑咏者",
+          "shortName": "剑咏者",
+          "source": "TCE",
+          "unlock": 2,
+          "features": [
+            {
+              "name": "剑咏者风格",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "剑歌",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "战歌训练 (剑咏)",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "额外攻击",
+              "level": 6,
+              "source": "TCE"
+            },
+            {
+              "name": "守御之歌",
+              "level": 10,
+              "source": "TCE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cleric",
+      "name": "牧师",
+      "source": "PHB",
+      "group": "hybrid",
+      "features": [
+        {
+          "name": "神圣领域",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "施法",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "引导神力",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "引导神力：驱散不死生物",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "领域特性",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 4,
+          "source": "PHB"
+        },
+        {
+          "name": "摧毁不死生物（CR 1/2）",
+          "level": 5,
+          "source": "PHB"
+        },
+        {
+          "name": "引导神力",
+          "level": 6,
+          "source": "PHB"
+        },
+        {
+          "name": "领域特性",
+          "level": 6,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "摧毁不死生物（CR 1）",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "领域特性",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "神圣干预",
+          "level": 10,
+          "source": "PHB"
+        }
+      ],
+      "subclasses": [
+        {
+          "id": "cleric-PHB-知识",
+          "name": "知识领域",
+          "shortName": "知识",
+          "source": "PHB",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "知识祝福",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "引导神力：岁月知识",
+              "level": 2,
+              "source": "PHB"
+            },
+            {
+              "name": "引导神力：读心",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "受祝击",
+              "level": 8,
+              "source": "TCE"
+            },
+            {
+              "name": "强力施法",
+              "level": 8,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "cleric-PHB-生命",
+          "name": "生命领域",
+          "shortName": "生命",
+          "source": "PHB",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "附赠熟练项",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "生命门徒",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "引导神力：维持生命",
+              "level": 2,
+              "source": "PHB"
+            },
+            {
+              "name": "神佑医者",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "受祝击",
+              "level": 8,
+              "source": "TCE"
+            },
+            {
+              "name": "神圣打击",
+              "level": 8,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "cleric-PHB-光明",
+          "name": "光明领域",
+          "shortName": "光明",
+          "source": "PHB",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "附赠戏法",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "守御闪光",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "引导神力：黎明曙光",
+              "level": 2,
+              "source": "PHB"
+            },
+            {
+              "name": "精通闪光",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "受祝击",
+              "level": 8,
+              "source": "TCE"
+            },
+            {
+              "name": "强力施法",
+              "level": 8,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "cleric-PHB-自然",
+          "name": "自然领域",
+          "shortName": "自然",
+          "source": "PHB",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "自然侍僧",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "附赠熟练项",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "引导神力：魅惑动植物",
+              "level": 2,
+              "source": "PHB"
+            },
+            {
+              "name": "抑制元素",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "受祝击",
+              "level": 8,
+              "source": "TCE"
+            },
+            {
+              "name": "神圣打击",
+              "level": 8,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "cleric-PHB-风暴",
+          "name": "风暴领域",
+          "shortName": "风暴",
+          "source": "PHB",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "附赠熟练",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "风暴狂怒",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "引导神力：毁灭狂怒",
+              "level": 2,
+              "source": "PHB"
+            },
+            {
+              "name": "雷鸣打击",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "受祝击",
+              "level": 8,
+              "source": "TCE"
+            },
+            {
+              "name": "神圣打击",
+              "level": 8,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "cleric-PHB-诡术",
+          "name": "诡术领域",
+          "shortName": "诡术",
+          "source": "PHB",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "诡术祝福",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "引导神力：召唤分身",
+              "level": 2,
+              "source": "PHB"
+            },
+            {
+              "name": "引导神力：幽影斗篷",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "受祝击",
+              "level": 8,
+              "source": "TCE"
+            },
+            {
+              "name": "神圣打击",
+              "level": 8,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "cleric-PHB-战争",
+          "name": "战争领域",
+          "shortName": "战争",
+          "source": "PHB",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "附赠熟练",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "战争祭司",
+              "level": 1,
+              "source": "PHB"
+            },
+            {
+              "name": "引导神力：导引打击",
+              "level": 2,
+              "source": "PHB"
+            },
+            {
+              "name": "引导神力：战神祝福",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "受祝击",
+              "level": 8,
+              "source": "TCE"
+            },
+            {
+              "name": "神圣打击",
+              "level": 8,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "cleric-DMG-死亡",
+          "name": "死亡领域",
+          "shortName": "死亡",
+          "source": "DMG",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "附赠熟练项",
+              "level": 1,
+              "source": "DMG"
+            },
+            {
+              "name": "收割者",
+              "level": 1,
+              "source": "DMG"
+            },
+            {
+              "name": "引导神力：死亡之触",
+              "level": 2,
+              "source": "DMG"
+            },
+            {
+              "name": "命定毁伤",
+              "level": 6,
+              "source": "DMG"
+            },
+            {
+              "name": "受祝击",
+              "level": 8,
+              "source": "TCE"
+            },
+            {
+              "name": "神圣打击",
+              "level": 8,
+              "source": "DMG"
+            }
+          ]
+        },
+        {
+          "id": "cleric-SCAG-奥秘",
+          "name": "奥秘领域",
+          "shortName": "奥秘",
+          "source": "SCAG",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "奥术传承",
+              "level": 1,
+              "source": "SCAG"
+            },
+            {
+              "name": "引导神力：奥秘阻绝",
+              "level": 2,
+              "source": "SCAG"
+            },
+            {
+              "name": "破法者",
+              "level": 6,
+              "source": "SCAG"
+            },
+            {
+              "name": "受祝击",
+              "level": 8,
+              "source": "TCE"
+            },
+            {
+              "name": "强力施法",
+              "level": 8,
+              "source": "SCAG"
+            }
+          ]
+        },
+        {
+          "id": "cleric-XGE-锻造",
+          "name": "锻造领域",
+          "shortName": "锻造",
+          "source": "XGE",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "锻造祝福",
+              "level": 1,
+              "source": "XGE"
+            },
+            {
+              "name": "附赠熟练项",
+              "level": 1,
+              "source": "XGE"
+            },
+            {
+              "name": "引导神力：铁匠祝福",
+              "level": 2,
+              "source": "XGE"
+            },
+            {
+              "name": "锻造之魂",
+              "level": 6,
+              "source": "XGE"
+            },
+            {
+              "name": "受祝击",
+              "level": 8,
+              "source": "TCE"
+            },
+            {
+              "name": "神圣打击",
+              "level": 8,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "cleric-XGE-坟墓",
+          "name": "坟墓领域",
+          "shortName": "坟墓",
+          "source": "XGE",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "生死轮回",
+              "level": 1,
+              "source": "XGE"
+            },
+            {
+              "name": "坟墓之眼",
+              "level": 1,
+              "source": "XGE"
+            },
+            {
+              "name": "引导神力：往墓之途",
+              "level": 2,
+              "source": "XGE"
+            },
+            {
+              "name": "死门哨卫",
+              "level": 6,
+              "source": "XGE"
+            },
+            {
+              "name": "受祝击",
+              "level": 8,
+              "source": "TCE"
+            },
+            {
+              "name": "强力施法",
+              "level": 8,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "cleric-TCE-秩序",
+          "name": "秩序领域",
+          "shortName": "秩序",
+          "source": "TCE",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "附赠熟练",
+              "level": 1,
+              "source": "TCE"
+            },
+            {
+              "name": "权威之音",
+              "level": 1,
+              "source": "TCE"
+            },
+            {
+              "name": "引导神力：秩序之令",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "律法化身",
+              "level": 6,
+              "source": "TCE"
+            },
+            {
+              "name": "受祝击",
+              "level": 8,
+              "source": "TCE"
+            },
+            {
+              "name": "神圣打击",
+              "level": 8,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "cleric-TCE-和平",
+          "name": "和平领域",
+          "shortName": "和平",
+          "source": "TCE",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "勇气联结",
+              "level": 1,
+              "source": "TCE"
+            },
+            {
+              "name": "和平执行",
+              "level": 1,
+              "source": "TCE"
+            },
+            {
+              "name": "引导神力：和平抚慰",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "保护联结",
+              "level": 6,
+              "source": "TCE"
+            },
+            {
+              "name": "受祝击",
+              "level": 8,
+              "source": "TCE"
+            },
+            {
+              "name": "强力施法",
+              "level": 8,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "cleric-TCE-暮光",
+          "name": "暮光领域",
+          "shortName": "暮光",
+          "source": "TCE",
+          "unlock": 1,
+          "features": [
+            {
+              "name": "附赠熟练",
+              "level": 1,
+              "source": "TCE"
+            },
+            {
+              "name": "黑夜明目",
+              "level": 1,
+              "source": "TCE"
+            },
+            {
+              "name": "警觉赐福",
+              "level": 1,
+              "source": "TCE"
+            },
+            {
+              "name": "引导神力：暮光圣域",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "午夜飞步",
+              "level": 6,
+              "source": "TCE"
+            },
+            {
+              "name": "受祝击",
+              "level": 8,
+              "source": "TCE"
+            },
+            {
+              "name": "神圣打击",
+              "level": 8,
+              "source": "TCE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "druid",
+      "name": "德鲁伊",
+      "source": "PHB",
+      "group": "hybrid",
+      "features": [
+        {
+          "name": "德鲁伊语",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "施法",
+          "level": 1,
+          "source": "PHB"
+        },
+        {
+          "name": "德鲁伊结社",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "荒野形态",
+          "level": 2,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 4,
+          "source": "PHB"
+        },
+        {
+          "name": "荒野形态增效",
+          "level": 4,
+          "source": "PHB"
+        },
+        {
+          "name": "德鲁伊结社特性",
+          "level": 6,
+          "source": "PHB"
+        },
+        {
+          "name": "属性值提升",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "荒野形态增效",
+          "level": 8,
+          "source": "PHB"
+        },
+        {
+          "name": "德鲁伊结社特性",
+          "level": 10,
+          "source": "PHB"
+        }
+      ],
+      "subclasses": [
+        {
+          "id": "druid-PHB-大地",
+          "name": "大地结社",
+          "shortName": "大地",
+          "source": "PHB",
+          "unlock": 2,
+          "features": [
+            {
+              "name": "附赠戏法",
+              "level": 2,
+              "source": "PHB"
+            },
+            {
+              "name": "结社法术",
+              "level": 2,
+              "source": "PHB"
+            },
+            {
+              "name": "自然恢复",
+              "level": 2,
+              "source": "PHB"
+            },
+            {
+              "name": "大地行者",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "自然之护",
+              "level": 10,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "druid-PHB-月亮",
+          "name": "月亮结社",
+          "shortName": "月亮",
+          "source": "PHB",
+          "unlock": 2,
+          "features": [
+            {
+              "name": "结社形态",
+              "level": 2,
+              "source": "PHB"
+            },
+            {
+              "name": "战斗荒野形态",
+              "level": 2,
+              "source": "PHB"
+            },
+            {
+              "name": "原力蛮击",
+              "level": 6,
+              "source": "PHB"
+            },
+            {
+              "name": "元素荒野形态",
+              "level": 10,
+              "source": "PHB"
+            }
+          ]
+        },
+        {
+          "id": "druid-XGE-梦境",
+          "name": "梦境结社",
+          "shortName": "梦境",
+          "source": "XGE",
+          "unlock": 2,
+          "features": [
+            {
+              "name": "夏之王庭的芬馥",
+              "level": 2,
+              "source": "XGE"
+            },
+            {
+              "name": "月光阴影的炉心",
+              "level": 6,
+              "source": "XGE"
+            },
+            {
+              "name": "隐匿通途",
+              "level": 10,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "druid-XGE-牧人",
+          "name": "牧人结社",
+          "shortName": "牧人",
+          "source": "XGE",
+          "unlock": 2,
+          "features": [
+            {
+              "name": "林地之语",
+              "level": 2,
+              "source": "XGE"
+            },
+            {
+              "name": "精魂图腾",
+              "level": 2,
+              "source": "XGE"
+            },
+            {
+              "name": "全能牧者",
+              "level": 6,
+              "source": "XGE"
+            },
+            {
+              "name": "精魂守卫",
+              "level": 10,
+              "source": "XGE"
+            }
+          ]
+        },
+        {
+          "id": "druid-TCE-孢子",
+          "name": "孢子结社",
+          "shortName": "孢子",
+          "source": "TCE",
+          "unlock": 2,
+          "features": [
+            {
+              "name": "结社法术",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "孢子环绕",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "一体共生",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "真菌感染",
+              "level": 6,
+              "source": "TCE"
+            },
+            {
+              "name": "扩散孢子",
+              "level": 10,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "druid-TCE-星辰",
+          "name": "星辰结社",
+          "shortName": "星辰",
+          "source": "TCE",
+          "unlock": 2,
+          "features": [
+            {
+              "name": "星图",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "星耀形态",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "射手座",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "圣杯座",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "龙",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "宇宙预兆",
+              "level": 6,
+              "source": "TCE"
+            },
+            {
+              "name": "闪耀星座",
+              "level": 10,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "druid-TCE-野火",
+          "name": "野火结社",
+          "shortName": "野火",
+          "source": "TCE",
+          "unlock": 2,
+          "features": [
+            {
+              "name": "结社法术",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "召唤野火精魂",
+              "level": 2,
+              "source": "TCE"
+            },
+            {
+              "name": "强化链接",
+              "level": 6,
+              "source": "TCE"
+            },
+            {
+              "name": "灼烧烈焰",
+              "level": 10,
+              "source": "TCE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "artificer",
+      "name": "奇械师",
+      "source": "TCE",
+      "group": "hybrid",
+      "features": [
+        {
+          "name": "魔法工艺",
+          "level": 1,
+          "source": "TCE"
+        },
+        {
+          "name": "可选规则:枪械熟练",
+          "level": 1,
+          "source": "TCE"
+        },
+        {
+          "name": "施法",
+          "level": 1,
+          "source": "TCE"
+        },
+        {
+          "name": "物品注法",
+          "level": 2,
+          "source": "TCE"
+        },
+        {
+          "name": "已知注法",
+          "level": 2,
+          "source": "TCE"
+        },
+        {
+          "name": "奇械师专业",
+          "level": 3,
+          "source": "TCE"
+        },
+        {
+          "name": "称手工具",
+          "level": 3,
+          "source": "TCE"
+        },
+        {
+          "name": "属性值提升",
+          "level": 4,
+          "source": "TCE"
+        },
+        {
+          "name": "奇械师专业特性",
+          "level": 5,
+          "source": "TCE"
+        },
+        {
+          "name": "工具专精",
+          "level": 6,
+          "source": "TCE"
+        },
+        {
+          "name": "灵光一闪",
+          "level": 7,
+          "source": "TCE"
+        },
+        {
+          "name": "属性值提升",
+          "level": 8,
+          "source": "TCE"
+        },
+        {
+          "name": "奇械师专业特性",
+          "level": 9,
+          "source": "TCE"
+        },
+        {
+          "name": "魔法物品熟稔",
+          "level": 10,
+          "source": "TCE"
+        }
+      ],
+      "subclasses": [
+        {
+          "id": "artificer-TCE-炼金师",
+          "name": "炼金师",
+          "shortName": "炼金师",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "炼金师法术",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "实验性灵药",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "工具熟练",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "炼金术掌握",
+              "level": 5,
+              "source": "TCE"
+            },
+            {
+              "name": "复原药剂",
+              "level": 9,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "artificer-TCE-装甲师",
+          "name": "装甲师",
+          "shortName": "装甲师",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "减震场",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "防护场",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "闪电发射器",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "动力步伐",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "雷霆战拳",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "奥能装甲",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "装甲型号",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "装甲师法术",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "行业工具",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "额外攻击",
+              "level": 5,
+              "source": "TCE"
+            },
+            {
+              "name": "装甲改造",
+              "level": 9,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "artificer-TCE-魔炮师",
+          "name": "魔炮师",
+          "shortName": "魔炮师",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "魔炮师法术",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "魔能炮台",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "工具熟练",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "奥术枪械",
+              "level": 5,
+              "source": "TCE"
+            },
+            {
+              "name": "高爆炮台",
+              "level": 9,
+              "source": "TCE"
+            }
+          ]
+        },
+        {
+          "id": "artificer-TCE-战地匠师",
+          "name": "战地匠师",
+          "shortName": "战地匠师",
+          "source": "TCE",
+          "unlock": 3,
+          "features": [
+            {
+              "name": "战斗准备",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "战地匠师法术",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "钢铁守卫",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "工具熟练",
+              "level": 3,
+              "source": "TCE"
+            },
+            {
+              "name": "额外攻击",
+              "level": 5,
+              "source": "TCE"
+            },
+            {
+              "name": "奥能震荡",
+              "level": 9,
+              "source": "TCE"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "weapons": [
+    {
+      "id": "战斧",
+      "name": "战斧",
+      "count": 1,
+      "die": 8,
+      "flat": 0,
+      "damageType": "slashing",
+      "properties": [
+        "V"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 10
+    },
+    {
+      "id": "吹箭筒",
+      "name": "吹箭筒",
+      "count": 0,
+      "die": 1,
+      "flat": 1,
+      "damageType": "piercing",
+      "properties": [
+        "A",
+        "LD"
+      ],
+      "mastery": "",
+      "ranged": true,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "短棒",
+      "name": "短棒",
+      "count": 1,
+      "die": 4,
+      "flat": 0,
+      "damageType": "bludgeoning",
+      "properties": [
+        "L"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "simple",
+      "versatile": 0
+    },
+    {
+      "id": "匕首",
+      "name": "匕首",
+      "count": 1,
+      "die": 4,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [
+        "F",
+        "L",
+        "T"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "simple",
+      "versatile": 0
+    },
+    {
+      "id": "飞镖",
+      "name": "飞镖",
+      "count": 1,
+      "die": 4,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [
+        "F",
+        "T"
+      ],
+      "mastery": "",
+      "ranged": true,
+      "category": "simple",
+      "versatile": 0
+    },
+    {
+      "id": "链枷",
+      "name": "链枷",
+      "count": 1,
+      "die": 8,
+      "flat": 0,
+      "damageType": "bludgeoning",
+      "properties": [],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "长柄刀",
+      "name": "长柄刀",
+      "count": 1,
+      "die": 10,
+      "flat": 0,
+      "damageType": "slashing",
+      "properties": [
+        "H",
+        "R",
+        "2H"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "巨斧",
+      "name": "巨斧",
+      "count": 1,
+      "die": 12,
+      "flat": 0,
+      "damageType": "slashing",
+      "properties": [
+        "H",
+        "2H"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "巨棒",
+      "name": "巨棒",
+      "count": 1,
+      "die": 8,
+      "flat": 0,
+      "damageType": "bludgeoning",
+      "properties": [
+        "2H"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "simple",
+      "versatile": 0
+    },
+    {
+      "id": "巨剑",
+      "name": "巨剑",
+      "count": 2,
+      "die": 6,
+      "flat": 0,
+      "damageType": "slashing",
+      "properties": [
+        "H",
+        "2H"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "长戟",
+      "name": "长戟",
+      "count": 1,
+      "die": 10,
+      "flat": 0,
+      "damageType": "slashing",
+      "properties": [
+        "H",
+        "R",
+        "2H"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "手弩",
+      "name": "手弩",
+      "count": 1,
+      "die": 6,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [
+        "A",
+        "L",
+        "LD"
+      ],
+      "mastery": "",
+      "ranged": true,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "手斧",
+      "name": "手斧",
+      "count": 1,
+      "die": 6,
+      "flat": 0,
+      "damageType": "slashing",
+      "properties": [
+        "L",
+        "T"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "simple",
+      "versatile": 0
+    },
+    {
+      "id": "重弩",
+      "name": "重弩",
+      "count": 1,
+      "die": 10,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [
+        "A",
+        "H",
+        "LD",
+        "2H"
+      ],
+      "mastery": "",
+      "ranged": true,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "标枪",
+      "name": "标枪",
+      "count": 1,
+      "die": 6,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [
+        "T"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "simple",
+      "versatile": 0
+    },
+    {
+      "id": "骑枪",
+      "name": "骑枪",
+      "count": 1,
+      "die": 12,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [
+        "R",
+        "S"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "轻弩",
+      "name": "轻弩",
+      "count": 1,
+      "die": 8,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [
+        "A",
+        "LD",
+        "2H"
+      ],
+      "mastery": "",
+      "ranged": true,
+      "category": "simple",
+      "versatile": 0
+    },
+    {
+      "id": "轻锤",
+      "name": "轻锤",
+      "count": 1,
+      "die": 4,
+      "flat": 0,
+      "damageType": "bludgeoning",
+      "properties": [
+        "L",
+        "T"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "simple",
+      "versatile": 0
+    },
+    {
+      "id": "长弓",
+      "name": "长弓",
+      "count": 1,
+      "die": 8,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [
+        "A",
+        "H",
+        "2H"
+      ],
+      "mastery": "",
+      "ranged": true,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "长剑",
+      "name": "长剑",
+      "count": 1,
+      "die": 8,
+      "flat": 0,
+      "damageType": "slashing",
+      "properties": [
+        "V"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 10
+    },
+    {
+      "id": "硬头锤",
+      "name": "硬头锤",
+      "count": 1,
+      "die": 6,
+      "flat": 0,
+      "damageType": "bludgeoning",
+      "properties": [],
+      "mastery": "",
+      "ranged": false,
+      "category": "simple",
+      "versatile": 0
+    },
+    {
+      "id": "巨锤",
+      "name": "巨锤",
+      "count": 2,
+      "die": 6,
+      "flat": 0,
+      "damageType": "bludgeoning",
+      "properties": [
+        "H",
+        "2H"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "钉头锤",
+      "name": "钉头锤",
+      "count": 1,
+      "die": 8,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "长矛",
+      "name": "长矛",
+      "count": 1,
+      "die": 10,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [
+        "H",
+        "R",
+        "2H"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "长棍",
+      "name": "长棍",
+      "count": 1,
+      "die": 6,
+      "flat": 0,
+      "damageType": "bludgeoning",
+      "properties": [
+        "V"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "simple",
+      "versatile": 8
+    },
+    {
+      "id": "刺剑",
+      "name": "刺剑",
+      "count": 1,
+      "die": 8,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [
+        "F"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "弯刀",
+      "name": "弯刀",
+      "count": 1,
+      "die": 6,
+      "flat": 0,
+      "damageType": "slashing",
+      "properties": [
+        "F",
+        "L"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "短弓",
+      "name": "短弓",
+      "count": 1,
+      "die": 6,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [
+        "A",
+        "2H"
+      ],
+      "mastery": "",
+      "ranged": true,
+      "category": "simple",
+      "versatile": 0
+    },
+    {
+      "id": "短剑",
+      "name": "短剑",
+      "count": 1,
+      "die": 6,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [
+        "F",
+        "L"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "镰刀",
+      "name": "镰刀",
+      "count": 1,
+      "die": 4,
+      "flat": 0,
+      "damageType": "slashing",
+      "properties": [
+        "L"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "simple",
+      "versatile": 0
+    },
+    {
+      "id": "投石索",
+      "name": "投石索",
+      "count": 1,
+      "die": 4,
+      "flat": 0,
+      "damageType": "bludgeoning",
+      "properties": [
+        "A"
+      ],
+      "mastery": "",
+      "ranged": true,
+      "category": "simple",
+      "versatile": 0
+    },
+    {
+      "id": "矛",
+      "name": "矛",
+      "count": 1,
+      "die": 6,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [
+        "T",
+        "V"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "simple",
+      "versatile": 8
+    },
+    {
+      "id": "三叉戟",
+      "name": "三叉戟",
+      "count": 1,
+      "die": 6,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [
+        "T",
+        "V"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 8
+    },
+    {
+      "id": "战镐",
+      "name": "战镐",
+      "count": 1,
+      "die": 8,
+      "flat": 0,
+      "damageType": "piercing",
+      "properties": [],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 0
+    },
+    {
+      "id": "战锤",
+      "name": "战锤",
+      "count": 1,
+      "die": 8,
+      "flat": 0,
+      "damageType": "bludgeoning",
+      "properties": [
+        "V"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 10
+    },
+    {
+      "id": "鞭子",
+      "name": "鞭子",
+      "count": 1,
+      "die": 4,
+      "flat": 0,
+      "damageType": "slashing",
+      "properties": [
+        "F",
+        "R"
+      ],
+      "mastery": "",
+      "ranged": false,
+      "category": "martial",
+      "versatile": 0
+    }
+  ]
+}
